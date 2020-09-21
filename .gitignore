@@ -2,6 +2,6 @@
 LifeCycle/.DS_Store
 xcuserdata/
 *.xcworkspace/
-GoogleService-Info.plist
 *.plist
+*Resources/
 

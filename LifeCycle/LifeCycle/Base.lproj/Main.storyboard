@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="Sga-MK-mWl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ekE-BF-daI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="gQr-0b-H5t" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xFo-BY-uuL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -47,14 +46,22 @@
                                     <segue destination="8YX-Hd-loU" kind="show" id="Oma-kr-jUJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RF-mf-6sE">
+                                <rect key="frame" x="132" y="528" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign in with Facebook">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iw2-JF-8l7"/>
                     </view>
                     <navigationItem key="navigationItem" id="5R6-it-ep5"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekE-BF-daI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="72"/>
+            <point key="canvasLocation" x="860.86956521739137" y="71.651785714285708"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4f4-Hb-GNf">
@@ -121,7 +128,6 @@
         <!--Navigation Controller-->
         <scene sceneID="D9X-zd-GYk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vd2-A1-x7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="ie0-Jf-QwG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EhC-Bs-fMQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -131,6 +137,7 @@
                         <segue destination="gQr-0b-H5t" kind="relationship" relationship="rootViewController" id="ZXK-4C-ufj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vd2-A1-x7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-86" y="72"/>
         </scene>

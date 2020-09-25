@@ -14,10 +14,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // snippet from https://fluffy.es/how-to-transition-from-login-screen-to-tab-bar-controller/
+        // if a user signs in and out and back in, it wont create multiple view controllers stacked
+        // on top of each other, it will delete the old one and minimize the memory being used
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // if user is logged in before
+        if let loggedUsername = UserDefaults.standard.string(forKey: "username") {
+            // instantiate the main tab bar controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+            window?.rootViewController = mainTabBarController
+        } else {
+            // if user isn't logged in
+            // instantiate the navigation controller and set it as root view controller
+            // using the storyboard identifier we set earlier
+            let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
+            window?.rootViewController = loginNavController
+        }
+        // end of snippet
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,6 +65,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    // This handles the change in View Controllers and its animation
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        
+        // change the root view controller to your specific view controller
+        window.rootViewController = vc
+        
+        // add animation
+        UIView.transition(with: window, duration: 1,
+                          options: .transitionFlipFromLeft,
+                            //options: .transitionCrossDissolve,
+                          //options: .transitionCurlUp,
+                          animations: nil, completion: nil)
     }
 
 

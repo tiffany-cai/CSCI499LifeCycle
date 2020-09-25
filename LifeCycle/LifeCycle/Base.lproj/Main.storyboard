@@ -15,9 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                          
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-1" translatesAutoresizingMaskIntoConstraints="NO" id="rNn-jl-5y1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pgn-9d-d6i">
                                 <rect key="frame" x="60" y="469" width="294" height="221"/>
@@ -161,7 +163,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6vA-wd-yxq">
             <objects>
-                <tabBarController id="Ont-LB-h1T" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="Ont-LB-h1T" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fbi-iV-0mb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -213,7 +215,7 @@
         <!--Navigation Controller-->
         <scene sceneID="D9X-zd-GYk">
             <objects>
-                <navigationController id="ie0-Jf-QwG" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" id="ie0-Jf-QwG" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EhC-Bs-fMQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

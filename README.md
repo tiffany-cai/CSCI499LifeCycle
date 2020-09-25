@@ -2,10 +2,10 @@
 
 ## Team
 
-Tiffany Cai
-Sophia Bonsu
-Kai Ye
-John Solano
+* Tiffany Cai
+* Sophia Bonsu
+* Kai Ye
+* John Solano
 
 
 

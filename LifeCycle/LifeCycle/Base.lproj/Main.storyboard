@@ -73,8 +73,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROL-gf-ZkE">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROL-gf-ZkE">
                                 <rect key="frame" x="147" y="333" width="207" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -85,8 +86,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSU-rH-eSC">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSU-rH-eSC">
                                 <rect key="frame" x="293" y="392" width="61" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,17 +98,10 @@
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kdB-sK-H0B" firstAttribute="bottom" secondItem="pgn-9d-d6i" secondAttribute="bottom" constant="172" id="33Q-6k-Gkp"/>
-                            <constraint firstItem="mSU-rH-eSC" firstAttribute="top" secondItem="ROL-gf-ZkE" secondAttribute="bottom" constant="25" id="8is-OQ-iLe"/>
                             <constraint firstItem="pgn-9d-d6i" firstAttribute="leading" secondItem="kdB-sK-H0B" secondAttribute="leading" constant="60" id="9I5-p2-ir7"/>
-                            <constraint firstItem="mSU-rH-eSC" firstAttribute="leading" secondItem="8ri-o5-Ne7" secondAttribute="trailing" constant="98" id="DYN-of-hwp"/>
-                            <constraint firstItem="pgn-9d-d6i" firstAttribute="top" secondItem="mSU-rH-eSC" secondAttribute="bottom" constant="43" id="QHi-8l-gBc"/>
                             <constraint firstItem="pgn-9d-d6i" firstAttribute="top" secondItem="8ri-o5-Ne7" secondAttribute="bottom" constant="43" id="SgR-Ts-lsT"/>
-                            <constraint firstItem="kdB-sK-H0B" firstAttribute="trailing" secondItem="mSU-rH-eSC" secondAttribute="trailing" constant="60" id="Sle-gH-fC9"/>
-                            <constraint firstItem="8ri-o5-Ne7" firstAttribute="top" secondItem="ROL-gf-ZkE" secondAttribute="bottom" constant="25" id="ZDU-HT-dUf"/>
+                            <constraint firstItem="8ri-o5-Ne7" firstAttribute="leading" secondItem="kdB-sK-H0B" secondAttribute="leading" constant="146" id="U1V-fp-AcP"/>
                             <constraint firstItem="kdB-sK-H0B" firstAttribute="trailing" secondItem="pgn-9d-d6i" secondAttribute="trailing" constant="60" id="efG-ss-WFT"/>
-                            <constraint firstItem="mSU-rH-eSC" firstAttribute="leading" secondItem="8ri-o5-Ne7" secondAttribute="trailing" constant="98" id="lE7-fV-UWX"/>
-                            <constraint firstItem="8ri-o5-Ne7" firstAttribute="leading" secondItem="kdB-sK-H0B" secondAttribute="leading" constant="146" id="ncu-sB-k1M"/>
-                            <constraint firstItem="pgn-9d-d6i" firstAttribute="top" secondItem="8ri-o5-Ne7" secondAttribute="bottom" constant="43" id="smI-6e-jht"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kdB-sK-H0B"/>
                     </view>

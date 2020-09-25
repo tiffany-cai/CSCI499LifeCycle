@@ -19,15 +19,25 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
     
 
     @IBAction func LoginTapped(_ sender: Any) {
-        // error, make sure everything filled out
+        //for debugging
+        print("Login Tapped");
         
-        // DB authentication
         
         // Switch root controller to Tab BAr
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        
+        // This is to get the SceneDelegate object from your view controller
+        // then call the change root view controller function to change to main tab bar
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        
+        
+        
         
     }
     /*

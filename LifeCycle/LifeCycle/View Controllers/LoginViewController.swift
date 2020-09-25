@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
-    @IBAction func EmailTextField(_ sender: UITextField) {
-    }
+    
+    @IBOutlet weak var username : UITextField!
+    
+    @IBOutlet weak var password : UITextField!
+    
+    @IBOutlet weak var errorLabel : UILabel!
+    
+
     
     
     
@@ -27,27 +34,32 @@ class LoginViewController: UIViewController {
         //for debugging
         print("Login Tapped");
         
+        // Create clean fields/parse text from text box
+        let email = username.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pass = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        // Switch root controller to Tab BAr
+        // Reference to Story Board
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
         
-        // This is to get the SceneDelegate object from your view controller
-        // then call the change root view controller function to change to main tab bar
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
-        
-        
-        
+        //Sign in the user
+        Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
+            if let error = error {
+                self.showError("\(error.localizedDescription)")
+            }
+            else{
+                // This is to get the SceneDelegate object from your view controller
+                // then call the change root view controller function to change to main tab bar
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            }
+        } // end of sign in
         
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func showError(_ message:String){
+     errorLabel.text = message
+     errorLabel.alpha = 1
     }
-    */
 
 }

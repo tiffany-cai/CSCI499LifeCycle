@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="-100.00000000000001" y="286.60714285714283"/>
         </scene>
-        <!--Item 2-->
+        <!--Add-->
         <scene sceneID="dUR-xB-iRE">
             <objects>
                 <viewController id="ZgD-4O-GZx" sceneMemberID="viewController">
@@ -140,28 +140,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hV9-hk-Ea4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="uQO-f8-5H9"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="plus" catalog="system" id="uQO-f8-5H9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxQ-Nr-4jM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="1026"/>
+            <point key="canvasLocation" x="1532" y="992"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="XY7-rr-8ri">
+        <!--Calendar-->
+        <scene sceneID="alF-lh-H9T">
             <objects>
-                <viewController id="6Qn-7G-Rsn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PXT-A5-95a">
+                <viewController id="6K3-H2-0Og" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vL7-Nj-7UD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="U1B-tL-UYb"/>
+                        <viewLayoutGuide key="safeArea" id="rw6-Ju-Ecj"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="Aix-vB-bW0"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ua-p9-8de" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zf8-Rk-p7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1532" y="1026"/>
         </scene>
-        <!--Item 1-->
+        <!--List-->
         <scene sceneID="6MB-v1-KJa">
             <objects>
                 <viewController id="6Yy-vB-LNP" sceneMemberID="viewController">
@@ -171,11 +172,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="UFD-MP-hbz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="xA6-Gb-Ype"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list.bullet" catalog="system" id="xA6-Gb-Ype"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ih-1F-KwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1533" y="287"/>
+            <point key="canvasLocation" x="713" y="992"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6vA-wd-yxq">
@@ -189,11 +190,12 @@
                     <connections>
                         <segue destination="6Yy-vB-LNP" kind="relationship" relationship="viewControllers" id="EhA-g3-dFt"/>
                         <segue destination="ZgD-4O-GZx" kind="relationship" relationship="viewControllers" id="Vcl-cz-tvZ"/>
+                        <segue destination="6K3-H2-0Og" kind="relationship" relationship="viewControllers" id="Uvm-E1-HgW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQb-6v-nm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="287"/>
+            <point key="canvasLocation" x="1532" y="287"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tro-R4-GHr">
@@ -247,6 +249,7 @@
         </scene>
     </scenes>
     <resources>
+
         <image name="Email" width="285" height="69"/>
         <image name="FB" width="285" height="69"/>
         <image name="Google" width="285" height="69"/>

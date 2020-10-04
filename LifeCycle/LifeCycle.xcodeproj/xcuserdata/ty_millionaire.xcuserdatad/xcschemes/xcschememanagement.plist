@@ -7,7 +7,11 @@
 		<key>LifeCycle.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
+<<<<<<< HEAD
 			<integer>23</integer>
+=======
+			<integer>0</integer>
+>>>>>>> d3653b2ad0e159779911bf4f4fe0895944af30a0
 		</dict>
 	</dict>
 </dict>

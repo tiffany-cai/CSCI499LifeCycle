@@ -7,24 +7,51 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var fname : UITextField!
+    @IBOutlet weak var lname : UITextField!
+    @IBOutlet weak var email : UITextField!
+    @IBOutlet weak var password : UITextField!
+    @IBOutlet weak var repassword : UITextField!
+    @IBOutlet weak var errorLabel : UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        errorLabel.alpha = 0;
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func SignUpTapped(_ sender: Any) {
+        // Clean fields from text box
+        let Fname = fname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let Lname = lname.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let Email = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let Password = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let Repassword = repassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Reference to Story Board
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        
+        //Register User
+        Auth.auth().createUser(withEmail: Email, password: Password) { authResult, error in
+            if let error = error {
+                //Show error
+                self.showError("\(error.localizedDescription)")
+            }
+            else {
+                // Go to home page
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            }
+        }
     }
-    */
-
+    
+    func showError(_ message:String){
+     errorLabel.text = message
+     errorLabel.alpha = 1
+    }
 }

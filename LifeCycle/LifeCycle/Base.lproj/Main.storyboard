@@ -20,10 +20,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pgn-9d-d6i">
-                                <rect key="frame" x="60" y="469" width="294" height="221"/>
+                                <rect key="frame" x="60" y="262" width="294" height="428"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RF-mf-6sE">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="138"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Facebook" backgroundImage="FB">
@@ -31,14 +31,14 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z15-qa-SVu">
-                                        <rect key="frame" x="0.0" y="76" width="294" height="69"/>
+                                        <rect key="frame" x="0.0" y="145" width="294" height="138"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Google" backgroundImage="Google">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoC-mE-SYJ">
-                                        <rect key="frame" x="0.0" y="152" width="294" height="69"/>
+                                        <rect key="frame" x="0.0" y="290" width="294" height="138"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="70" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Email" backgroundImage="Email">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zf8-Rk-p7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="1026"/>
+            <point key="canvasLocation" x="2319" y="992"/>
         </scene>
         <!--List-->
         <scene sceneID="6MB-v1-KJa">
@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1532" y="287"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="tro-R4-GHr">
             <objects>
-                <viewController id="ByQ-kP-OQK" sceneMemberID="viewController">
+                <viewController id="ByQ-kP-OQK" customClass="RegisterViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="81F-gL-reB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -213,6 +213,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="fname:" destination="lrZ-KT-nmf" eventType="editingDidEnd" id="aXX-qP-Yem"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBo-8E-ngw">
                                 <rect key="frame" x="20" y="292" width="132" height="27"/>
@@ -285,6 +288,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="SignUpTapped:" destination="ByQ-kP-OQK" eventType="touchUpInside" id="Jau-9W-5bn"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSX-ho-J1W">
                                 <rect key="frame" x="20" y="692" width="343" height="21"/>
@@ -299,8 +305,17 @@
                         <viewLayoutGuide key="safeArea" id="1Fx-gy-p7H"/>
                     </view>
                     <navigationItem key="navigationItem" id="sg9-zA-kZ6"/>
+                    <connections>
+                        <outlet property="email" destination="4x3-fL-0y5" id="hQd-D2-kbI"/>
+                        <outlet property="errorLabel" destination="sSX-ho-J1W" id="tBB-VE-7o9"/>
+                        <outlet property="fname" destination="DkY-vA-wid" id="pMR-l1-K3K"/>
+                        <outlet property="lname" destination="TN7-wq-CUd" id="at9-VG-hij"/>
+                        <outlet property="password" destination="VI3-Kt-vYz" id="hU0-Ah-moW"/>
+                        <outlet property="repassword" destination="yI8-6b-lVY" id="rUq-0p-9r1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXl-hU-X3C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="lrZ-KT-nmf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-100.00000000000001" y="991.74107142857133"/>
         </scene>

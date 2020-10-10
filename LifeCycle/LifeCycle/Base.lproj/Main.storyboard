@@ -129,7 +129,7 @@
         <!--Add-->
         <scene sceneID="dUR-xB-iRE">
             <objects>
-                <viewController id="ZgD-4O-GZx" sceneMemberID="viewController">
+                <viewController id="ZgD-4O-GZx" customClass="AddItemViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="swH-ei-bIC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,7 +145,7 @@
         <!--Calendar-->
         <scene sceneID="alF-lh-H9T">
             <objects>
-                <viewController id="6K3-H2-0Og" sceneMemberID="viewController">
+                <viewController id="6K3-H2-0Og" customClass="CalendarViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vL7-Nj-7UD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,13 +161,20 @@
         <!--List-->
         <scene sceneID="6MB-v1-KJa">
             <objects>
-                <viewController id="6Yy-vB-LNP" sceneMemberID="viewController">
+                <viewController id="6Yy-vB-LNP" customClass="ListViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yE6-2B-Q9i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dao-az-eol">
-                                <rect key="frame" x="186" y="253" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find UUID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-Df-Iiu">
+                                <rect key="frame" x="20" y="176" width="374" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YF-bh-nsX">
+                                <rect key="frame" x="20" y="314" width="374" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -178,15 +185,19 @@
                         <viewLayoutGuide key="safeArea" id="UFD-MP-hbz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="List" image="list.bullet" catalog="system" id="xA6-Gb-Ype"/>
+                    <connections>
+                        <outlet property="EmailLabel" destination="4YF-bh-nsX" id="26p-tq-fSB"/>
+                        <outlet property="UUIDLabel" destination="CoI-Df-Iiu" id="3Bs-Ph-fVf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ih-1F-KwD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="713" y="992"/>
+            <point key="canvasLocation" x="711.59420289855075" y="991.74107142857133"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="6vA-wd-yxq">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" id="Ont-LB-h1T" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="Ont-LB-h1T" customClass="MainTabBarController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fbi-iV-0mb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -196,7 +207,7 @@
                         <segue destination="6Yy-vB-LNP" kind="relationship" relationship="viewControllers" id="EhA-g3-dFt"/>
                         <segue destination="ZgD-4O-GZx" kind="relationship" relationship="viewControllers" id="Vcl-cz-tvZ"/>
                         <segue destination="6K3-H2-0Og" kind="relationship" relationship="viewControllers" id="Uvm-E1-HgW"/>
-                        <segue destination="Wxk-2I-nsQ" kind="relationship" relationship="viewControllers" id="JNd-M4-dhq"/>
+                        <segue destination="dww-Rj-Edj" kind="relationship" relationship="viewControllers" id="ReZ-TR-yp8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQb-6v-nm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,20 +215,32 @@
             <point key="canvasLocation" x="1532" y="287"/>
         </scene>
         <!--Item-->
-        <scene sceneID="4ik-F1-jbB">
+        <scene sceneID="7Dg-yp-1QC">
             <objects>
-                <viewController id="Wxk-2I-nsQ" customClass="SettingsViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="azd-7n-Myg">
+                <viewController id="dww-Rj-Edj" customClass="SettingsViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ks5-YI-8of">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XY7-7T-kgv">
+                                <rect key="frame" x="20" y="310" width="374" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="siJ-hk-dTg"/>
+                        <viewLayoutGuide key="safeArea" id="7Gs-5k-XNX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="vYf-Tp-NRX"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="cu8-Vg-wk6"/>
+                    <connections>
+                        <outlet property="WelcomeLabel" destination="XY7-7T-kgv" id="mdJ-8s-Pfw"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="joX-Ip-7mL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Enx-Kc-ccL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2717" y="287"/>
+            <point key="canvasLocation" x="2689.8550724637685" y="249.77678571428569"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="tro-R4-GHr">

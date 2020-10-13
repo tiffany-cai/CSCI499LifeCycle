@@ -24,6 +24,7 @@ class MainTabBarController: UITabBarController {
                     let documentData = document!.data()
                     
                     print(documentData!)
+                    
                 }
             }
             

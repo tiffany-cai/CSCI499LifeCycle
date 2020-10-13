@@ -10,14 +10,27 @@ import UIKit
 import Firebase
 
 class SettingsViewController: UIViewController {
+    var EM : String = ""
+    
     @IBOutlet weak var test: UITextField!
+    
+    @IBOutlet weak var EMlbl: UIButton!
     
     @IBOutlet weak var settings: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            EM = user.email!
+        }
+        
+        EMlbl.setTitle("\(EM)", for: .normal)
        // settings.setPadding()
         //settings.setBottomBorder()
     }
+  
+    
     
 }
 /*extension UILabel {

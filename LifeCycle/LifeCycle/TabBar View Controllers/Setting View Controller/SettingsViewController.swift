@@ -31,6 +31,21 @@ class SettingsViewController: UIViewController {
     }
   
     
+    @IBAction func NotificationTapped(_ sender: Any) {
+        
+        // reference to StoryBoard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        // reference to the View Controller you want to goto
+        let NotificationSettingsViewController = storyboard.instantiateViewController(identifier: "NotificationsViewController")
+        
+        // changeRootViewController Function 
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(NotificationSettingsViewController)
+        
+    }
+    
+    
+    
     
 }
 /*extension UILabel {

@@ -217,7 +217,7 @@
         <!--Settings-->
         <scene sceneID="7Dg-yp-1QC">
             <objects>
-                <viewController id="dww-Rj-Edj" customClass="SetViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dww-Rj-Edj" customClass="SettingsViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ks5-YI-8of">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -307,6 +307,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Enx-Kc-ccL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2689.8550724637685" y="249.77678571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fOh-k2-8Z3">
+            <objects>
+                <viewController id="Jc7-w6-ymv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tur-yj-r2L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="x5N-Kp-RcD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vfe-RJ-LO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3487" y="929"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n9q-hi-QLt">
+            <objects>
+                <viewController id="QMe-Rp-1Qq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ybc-Lc-Njx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sG3-Rm-geZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Fe-B7-Vfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3487" y="-429"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CVV-fw-QXA">
+            <objects>
+                <viewController id="zao-zM-FAm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Tv-2i-uii">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6SK-oV-GSt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2iM-Q2-aoF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3487" y="250"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="tro-R4-GHr">

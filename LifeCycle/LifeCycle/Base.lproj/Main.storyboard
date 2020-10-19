@@ -256,6 +256,9 @@
                                 <state key="normal" title="UserEmail" image="person" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="AccountTapped:" destination="dww-Rj-Edj" eventType="touchUpInside" id="Wbo-Rb-U9b"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtc-eH-fZS">
                                 <rect key="frame" x="0.0" y="399" width="414" height="57"/>
@@ -265,6 +268,9 @@
                                 <state key="normal" title="     Notifications                         &gt;" image="bell" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="NotificationsTapped:" destination="dww-Rj-Edj" eventType="touchUpInside" id="NKJ-3B-aik"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="H E L P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHL-V7-YIT">
                                 <rect key="frame" x="20" y="491" width="98" height="50"/>
@@ -290,6 +296,9 @@
                                 <state key="normal" title="     Support &amp; Resources       &gt;" image="doc.text" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="SupportTapped:" destination="dww-Rj-Edj" eventType="touchUpInside" id="wS6-cX-wpm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbU-kS-iai">
                                 <rect key="frame" x="20" y="64" width="139" height="42"/>
@@ -308,10 +317,10 @@
             </objects>
             <point key="canvasLocation" x="2689.8550724637685" y="249.77678571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Support View Controller-->
         <scene sceneID="fOh-k2-8Z3">
             <objects>
-                <viewController id="Jc7-w6-ymv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SupportViewController" id="Jc7-w6-ymv" customClass="SupportViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tur-yj-r2L">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,10 +332,10 @@
             </objects>
             <point key="canvasLocation" x="3487" y="929"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="n9q-hi-QLt">
             <objects>
-                <viewController id="QMe-Rp-1Qq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="QMe-Rp-1Qq" customClass="AccountViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybc-Lc-Njx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,10 +347,10 @@
             </objects>
             <point key="canvasLocation" x="3487" y="-429"/>
         </scene>
-        <!--View Controller-->
+        <!--Notification View Controller-->
         <scene sceneID="CVV-fw-QXA">
             <objects>
-                <viewController id="zao-zM-FAm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotificationViewController" id="zao-zM-FAm" customClass="NotificationViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Tv-2i-uii">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

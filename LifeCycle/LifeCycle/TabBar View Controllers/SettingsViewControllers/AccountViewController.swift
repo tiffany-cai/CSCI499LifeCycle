@@ -18,7 +18,11 @@ class AccountViewController: UIViewController {
     }
     
     @IBAction func BackBtn(_ sender: Any) {
-        print("TEST BTN")
+        // Return to Setting Page
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let SettingsVC = storyboard.instantiateViewController(identifier: "SettingsViewController")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(SettingsVC)
+        
     }
     
 

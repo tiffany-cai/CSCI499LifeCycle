@@ -15,7 +15,6 @@
 		6F0E457E253E5261002E7D22 /* SettingsBackButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E457D253E5261002E7D22 /* SettingsBackButtons.swift */; };
 		6F0E4580253E5907002E7D22 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E457F253E5907002E7D22 /* AppColors.swift */; };
 		6F0E4582253E5CDC002E7D22 /* IMG_5855.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 6F0E4581253E5CDC002E7D22 /* IMG_5855.JPG */; };
-		6F0E4584253E6EF4002E7D22 /* SettingsBackButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F0E4583253E6EF4002E7D22 /* SettingsBackButton.xib */; };
 		6F27DF7525147B7000112385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F27DF7425147B7000112385 /* AppDelegate.swift */; };
 		6F27DF7725147B7000112385 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F27DF7625147B7000112385 /* SceneDelegate.swift */; };
 		6F27DF7C25147B7000112385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F27DF7A25147B7000112385 /* Main.storyboard */; };
@@ -40,7 +39,6 @@
 		6F0E457D253E5261002E7D22 /* SettingsBackButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBackButtons.swift; sourceTree = "<group>"; };
 		6F0E457F253E5907002E7D22 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		6F0E4581253E5CDC002E7D22 /* IMG_5855.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5855.JPG; sourceTree = "<group>"; };
-		6F0E4583253E6EF4002E7D22 /* SettingsBackButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsBackButton.xib; sourceTree = "<group>"; };
 		6F27DF7125147B7000112385 /* LifeCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F27DF7425147B7000112385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F27DF7625147B7000112385 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				6F0E4581253E5CDC002E7D22 /* IMG_5855.JPG */,
 				6F0E457D253E5261002E7D22 /* SettingsBackButtons.swift */,
 				6F0E457F253E5907002E7D22 /* AppColors.swift */,
-				6F0E4583253E6EF4002E7D22 /* SettingsBackButton.xib */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -231,7 +228,6 @@
 				6F27DF99251AAA4100112385 /* GoogleService-Info.plist in Resources */,
 				6F27DF8125147B7900112385 /* LaunchScreen.storyboard in Resources */,
 				6F0E4582253E5CDC002E7D22 /* IMG_5855.JPG in Resources */,
-				6F0E4584253E6EF4002E7D22 /* SettingsBackButton.xib in Resources */,
 				6F27DF7E25147B7900112385 /* Assets.xcassets in Resources */,
 				6F27DF7C25147B7000112385 /* Main.storyboard in Resources */,
 			);

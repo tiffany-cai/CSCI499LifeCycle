@@ -10,8 +10,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    
+        
+    }
     
     
     @IBAction func AccountTapped(_ sender: Any) {
@@ -41,14 +44,6 @@ class SettingsViewController: UIViewController {
         let SupportVC = storyboard.instantiateViewController(identifier: "SupportViewController")
         
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(SupportVC)
-    }
-    
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
     }
 
 }

@@ -29,6 +29,9 @@ class MainTabBarController: UITabBarController {
             }
             
         }
-    }
+    } // end of view did load
+    
+
+    
 
 }

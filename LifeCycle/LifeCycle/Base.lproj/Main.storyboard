@@ -217,7 +217,7 @@
         <!--Settings-->
         <scene sceneID="7Dg-yp-1QC">
             <objects>
-                <viewController id="dww-Rj-Edj" customClass="SettingsViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="dww-Rj-Edj" customClass="SettingsViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ks5-YI-8of">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,6 +339,16 @@
                     <view key="view" contentMode="scaleToFill" id="ybc-Lc-Njx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRZ-sT-Icc">
+                                <rect key="frame" x="152" y="772" width="110" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back To Setings"/>
+                                <connections>
+                                    <action selector="BackBtn:" destination="QMe-Rp-1Qq" eventType="touchUpInside" id="Eio-UL-CH2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sG3-Rm-geZ"/>
                     </view>

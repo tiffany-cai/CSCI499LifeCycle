@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.barTintColor = SteelTeal
+        self.view.backgroundColor = SteelTeal
 
         errorLabel.alpha = 0;
     }

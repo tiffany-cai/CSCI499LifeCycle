@@ -20,7 +20,10 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationController?.navigationBar.barTintColor = MorningBlue
+        self.view.backgroundColor = MorningBlue
+        
         errorLabel.alpha = 0;
         
     }

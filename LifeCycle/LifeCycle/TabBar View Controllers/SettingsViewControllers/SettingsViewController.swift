@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController {
         }
         
         // Set account title as currently signed in users email
-        AccountBtn.setTitle("\(userEmail)", for: .normal)
+        AccountBtn.setTitle("     \(userEmail)                         ", for: .normal)
         
     }
     

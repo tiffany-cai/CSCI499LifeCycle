@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var AccountBtn: UIButton!
+    var userEmail : String = ""
+    var userID : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Get User ID/ Email
+        let user = Auth.auth().currentUser
+        if let user = user {
+            userID = user.uid
+            userEmail = user.email!
+        }
+        
+        // Set account title as currently signed in users email
+        AccountBtn.setTitle("\(userEmail)", for: .normal)
         
     }
     

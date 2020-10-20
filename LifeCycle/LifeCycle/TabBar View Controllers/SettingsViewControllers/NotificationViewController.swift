@@ -13,7 +13,8 @@ class NotificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Set BG
+        self.view.backgroundColor = UIColor.AppColors.AshGrey
     }
     
 

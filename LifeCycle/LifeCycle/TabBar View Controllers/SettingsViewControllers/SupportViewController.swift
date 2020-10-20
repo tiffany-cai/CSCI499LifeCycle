@@ -12,7 +12,8 @@ class SupportViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // Set BG
+        self.view.backgroundColor = UIColor.AppColors.AshGrey
         // Do any additional setup after loading the view.
     }
     

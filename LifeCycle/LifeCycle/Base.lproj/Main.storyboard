@@ -343,6 +343,36 @@
                                     <action selector="BackBtn:" destination="QMe-Rp-1Qq" eventType="touchUpInside" id="y39-Ex-55t"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skn-yh-Vkh" customClass="SettingsBackButton" customModule="LifeCycle" customModuleProvider="target">
+                                <rect key="frame" x="157" y="774" width="100" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <inset key="titleEdgeInsets" minX="-38" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-95" maxY="0.0"/>
+                                <state key="normal" title="Send" image="arrow.up" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="heavy"/>
+                                </state>
+                                <connections>
+                                    <action selector="BackBtn:" destination="QMe-Rp-1Qq" eventType="touchUpInside" id="U9s-fH-PoJ"/>
+                                    <action selector="BackBtn:" destination="Jc7-w6-ymv" eventType="touchUpInside" id="xRn-ot-0F0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support Form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKq-Fb-uF4">
+                                <rect key="frame" x="20" y="81" width="374" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Have a Question? Contact the Team!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hlj-Fx-Cb4">
+                                <rect key="frame" x="42" y="165" width="331" height="567"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="x5N-Kp-RcD"/>
@@ -350,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfe-RJ-LO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3487" y="929"/>
+            <point key="canvasLocation" x="3486.9565217391305" y="928.79464285714278"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="n9q-hi-QLt">
@@ -565,6 +595,7 @@
         <image name="Google" width="285" height="69"/>
         <image name="Lifecycle Black PNG" width="2500" height="700"/>
         <image name="Lifecycle White PNG" width="2500" height="700"/>
+        <image name="arrow.up" catalog="system" width="60" height="64"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="64" height="52"/>
         <image name="background-1" width="2000" height="2000"/>
         <image name="bell" catalog="system" width="64" height="62"/>

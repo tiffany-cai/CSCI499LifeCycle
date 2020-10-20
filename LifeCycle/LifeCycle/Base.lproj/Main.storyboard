@@ -356,6 +356,7 @@
                                 <connections>
                                     <action selector="BackBtn:" destination="QMe-Rp-1Qq" eventType="touchUpInside" id="U9s-fH-PoJ"/>
                                     <action selector="BackBtn:" destination="Jc7-w6-ymv" eventType="touchUpInside" id="xRn-ot-0F0"/>
+                                    <action selector="SendBtn:" destination="Jc7-w6-ymv" eventType="touchUpInside" id="zUn-Ee-YV4"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support Form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKq-Fb-uF4">
@@ -377,6 +378,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="x5N-Kp-RcD"/>
                     </view>
+                    <connections>
+                        <outlet property="Question" destination="Hlj-Fx-Cb4" id="dWq-ur-F00"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfe-RJ-LO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

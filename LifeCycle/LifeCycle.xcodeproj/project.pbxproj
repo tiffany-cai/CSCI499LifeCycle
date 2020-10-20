@@ -12,7 +12,7 @@
 		6F0E4577253E481C002E7D22 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E4576253E481C002E7D22 /* AccountViewController.swift */; };
 		6F0E4579253E4865002E7D22 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E4578253E4865002E7D22 /* NotificationViewController.swift */; };
 		6F0E457B253E48CF002E7D22 /* SupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E457A253E48CF002E7D22 /* SupportViewController.swift */; };
-		6F0E457E253E5261002E7D22 /* SettingsBackButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E457D253E5261002E7D22 /* SettingsBackButtons.swift */; };
+		6F0E457E253E5261002E7D22 /* SettingsBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E457D253E5261002E7D22 /* SettingsBackButton.swift */; };
 		6F0E4580253E5907002E7D22 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0E457F253E5907002E7D22 /* AppColors.swift */; };
 		6F0E4582253E5CDC002E7D22 /* IMG_5855.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 6F0E4581253E5CDC002E7D22 /* IMG_5855.JPG */; };
 		6F27DF7525147B7000112385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F27DF7425147B7000112385 /* AppDelegate.swift */; };
@@ -36,7 +36,7 @@
 		6F0E4576253E481C002E7D22 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		6F0E4578253E4865002E7D22 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		6F0E457A253E48CF002E7D22 /* SupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportViewController.swift; sourceTree = "<group>"; };
-		6F0E457D253E5261002E7D22 /* SettingsBackButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBackButtons.swift; sourceTree = "<group>"; };
+		6F0E457D253E5261002E7D22 /* SettingsBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBackButton.swift; sourceTree = "<group>"; };
 		6F0E457F253E5907002E7D22 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		6F0E4581253E5CDC002E7D22 /* IMG_5855.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_5855.JPG; sourceTree = "<group>"; };
 		6F27DF7125147B7000112385 /* LifeCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				6F0E4581253E5CDC002E7D22 /* IMG_5855.JPG */,
-				6F0E457D253E5261002E7D22 /* SettingsBackButtons.swift */,
+				6F0E457D253E5261002E7D22 /* SettingsBackButton.swift */,
 				6F0E457F253E5907002E7D22 /* AppColors.swift */,
 			);
 			path = Assets;
@@ -287,7 +287,7 @@
 				6F0E457B253E48CF002E7D22 /* SupportViewController.swift in Sources */,
 				6F0E4580253E5907002E7D22 /* AppColors.swift in Sources */,
 				6F0E4579253E4865002E7D22 /* NotificationViewController.swift in Sources */,
-				6F0E457E253E5261002E7D22 /* SettingsBackButtons.swift in Sources */,
+				6F0E457E253E5261002E7D22 /* SettingsBackButton.swift in Sources */,
 				6F27DFA0251E89B600112385 /* LoginNavigationController.swift in Sources */,
 				6F0E4574253B6E90002E7D22 /* SettingsViewController.swift in Sources */,
 				6F27DFA9253242BF00112385 /* MainTabBarController.swift in Sources */,

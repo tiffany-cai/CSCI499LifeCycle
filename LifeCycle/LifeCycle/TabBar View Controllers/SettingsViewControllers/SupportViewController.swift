@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class SupportViewController: UIViewController {
 
+    @IBOutlet weak var Question: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set BG
@@ -18,6 +21,23 @@ class SupportViewController: UIViewController {
     }
     
     
+    @IBAction func SendBtn(_ sender: Any) {
+        //Get USer ID
+        guard let userID = Auth.auth().currentUser?.uid else{return}
+        
+        //add Question to DB
+        let db = Firestore.firestore()
+        
+        db.collection("SupportForm").document(userID).setData([
+            "Question" : Question.text!
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
     
 
     @IBAction func BackBtn(_ sender: Any) {

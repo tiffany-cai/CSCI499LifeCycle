@@ -312,6 +312,9 @@
                         <viewLayoutGuide key="safeArea" id="7Gs-5k-XNX"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="cu8-Vg-wk6"/>
+                    <connections>
+                        <outlet property="AccountBtn" destination="tGj-ih-JW0" id="fSu-l9-Y6t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Enx-Kc-ccL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

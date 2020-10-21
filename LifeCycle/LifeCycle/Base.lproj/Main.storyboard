@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OiC-Bp-LYh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ie0-Jf-QwG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -153,9 +153,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxQ-Nr-4jM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="1047"/>
+            <point key="canvasLocation" x="-2458" y="1047"/>
         </scene>
-        <!--Calendar-->
+        <!--Calendar View Controller-->
         <scene sceneID="alF-lh-H9T">
             <objects>
                 <viewController id="6K3-H2-0Og" customClass="CalendarViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -165,11 +165,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="rw6-Ju-Ecj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="Aix-vB-bW0"/>
+                    <navigationItem key="navigationItem" id="s86-ey-0nR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zf8-Rk-p7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2690" y="962"/>
+            <point key="canvasLocation" x="1362" y="1304"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="6vA-wd-yxq">
@@ -181,17 +181,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="OiC-Bp-LYh" kind="relationship" relationship="viewControllers" id="pzV-dT-kKM"/>
+                        <segue destination="G6r-TW-dIN" kind="relationship" relationship="viewControllers" id="pzV-dT-kKM"/>
                         <segue destination="ZgD-4O-GZx" kind="relationship" relationship="viewControllers" id="Vcl-cz-tvZ"/>
-                        <segue destination="6K3-H2-0Og" kind="relationship" relationship="viewControllers" id="Uvm-E1-HgW"/>
-                        <segue destination="dww-Rj-Edj" kind="relationship" relationship="viewControllers" id="ReZ-TR-yp8"/>
+                        <segue destination="J8K-Wa-pKB" kind="relationship" relationship="viewControllers" id="Uvm-E1-HgW"/>
+                        <segue destination="bYd-Pg-170" kind="relationship" relationship="viewControllers" id="ReZ-TR-yp8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQb-6v-nm3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-897" y="1047"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="7Dg-yp-1QC">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="dww-Rj-Edj" customClass="SettingsViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -235,6 +235,7 @@
                                 </state>
                                 <connections>
                                     <action selector="AccountTapped:" destination="dww-Rj-Edj" eventType="touchUpInside" id="Wbo-Rb-U9b"/>
+                                    <segue destination="QMe-Rp-1Qq" kind="show" id="NHu-jD-Vcg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtc-eH-fZS">
@@ -247,6 +248,7 @@
                                 </state>
                                 <connections>
                                     <action selector="NotificationsTapped:" destination="dww-Rj-Edj" eventType="touchUpInside" id="NKJ-3B-aik"/>
+                                    <segue destination="zao-zM-FAm" kind="show" id="lJB-Ff-bmz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="H E L P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHL-V7-YIT">
@@ -275,6 +277,7 @@
                                 </state>
                                 <connections>
                                     <action selector="SupportTapped:" destination="dww-Rj-Edj" eventType="touchUpInside" id="wS6-cX-wpm"/>
+                                    <segue destination="Jc7-w6-ymv" kind="show" id="XT3-1O-QXH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbU-kS-iai">
@@ -288,14 +291,14 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7Gs-5k-XNX"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="cu8-Vg-wk6"/>
+                    <navigationItem key="navigationItem" id="W7f-go-wT0"/>
                     <connections>
                         <outlet property="AccountBtn" destination="tGj-ih-JW0" id="fSu-l9-Y6t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Enx-Kc-ccL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2689.8550724637685" y="249.77678571428569"/>
+            <point key="canvasLocation" x="2535" y="576"/>
         </scene>
         <!--Support View Controller-->
         <scene sceneID="fOh-k2-8Z3">
@@ -305,23 +308,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFC-Nx-dQl" customClass="SettingsBackButton" customModule="LifeCycle" customModuleProvider="target">
-                                <rect key="frame" x="157" y="822" width="100" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support Form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKq-Fb-uF4">
+                                <rect key="frame" x="20" y="88" width="374" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <inset key="titleEdgeInsets" minX="-38" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-95" maxY="0.0"/>
-                                <state key="normal" title="Back" image="arrowshape.turn.up.left.fill" catalog="system">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackBtn:" destination="Jc7-w6-ymv" eventType="touchUpInside" id="qWf-hE-7HF"/>
-                                    <action selector="BackBtn:" destination="QMe-Rp-1Qq" eventType="touchUpInside" id="y39-Ex-55t"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Have a Question? Contact the Team!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hlj-Fx-Cb4">
+                                <rect key="frame" x="42" y="165" width="331" height="567"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skn-yh-Vkh" customClass="SettingsBackButton" customModule="LifeCycle" customModuleProvider="target">
-                                <rect key="frame" x="157" y="774" width="100" height="40"/>
+                                <rect key="frame" x="157" y="740" width="100" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="titleEdgeInsets" minX="-38" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -336,32 +339,18 @@
                                     <action selector="SendBtn:" destination="Jc7-w6-ymv" eventType="touchUpInside" id="zUn-Ee-YV4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Support Form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKq-Fb-uF4">
-                                <rect key="frame" x="20" y="81" width="374" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Have a Question? Contact the Team!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hlj-Fx-Cb4">
-                                <rect key="frame" x="42" y="165" width="331" height="567"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="x5N-Kp-RcD"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aIO-Ns-SKN"/>
                     <connections>
                         <outlet property="Question" destination="Hlj-Fx-Cb4" id="dWq-ur-F00"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vfe-RJ-LO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3486.9565217391305" y="928.79464285714278"/>
+            <point key="canvasLocation" x="3259" y="984"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="n9q-hi-QLt">
@@ -375,20 +364,6 @@
                                 <rect key="frame" x="0.0" y="132" width="414" height="660"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRZ-sT-Icc" customClass="SettingsBackButton" customModule="LifeCycle" customModuleProvider="target">
-                                <rect key="frame" x="157" y="822" width="100" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <inset key="titleEdgeInsets" minX="-38" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-95" maxY="0.0"/>
-                                <state key="normal" title="Back" image="arrowshape.turn.up.left.fill" catalog="system">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackBtn:" destination="QMe-Rp-1Qq" eventType="touchUpInside" id="Eio-UL-CH2"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Account Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SF6-aW-3t9">
                                 <rect key="frame" x="20" y="69" width="203" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -484,10 +459,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sG3-Rm-geZ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Zw8-E2-G1j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fe-B7-Vfl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3486.9565217391305" y="-429.24107142857139"/>
+            <point key="canvasLocation" x="3259" y="210"/>
         </scene>
         <!--Notification View Controller-->
         <scene sceneID="CVV-fw-QXA">
@@ -496,30 +472,14 @@
                     <view key="view" contentMode="scaleToFill" id="7Tv-2i-uii">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFm-A4-9FZ" customClass="SettingsBackButton" customModule="LifeCycle" customModuleProvider="target">
-                                <rect key="frame" x="157" y="822" width="100" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <inset key="titleEdgeInsets" minX="-38" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-95" maxY="0.0"/>
-                                <state key="normal" title="Back" image="arrowshape.turn.up.left.fill" catalog="system">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="ultraLight"/>
-                                </state>
-                                <connections>
-                                    <action selector="BackBtn:" destination="QMe-Rp-1Qq" eventType="touchUpInside" id="Yjb-mz-URy"/>
-                                    <action selector="BackBtn:" destination="zao-zM-FAm" eventType="touchUpInside" id="yIm-c3-vLG"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6SK-oV-GSt"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5HU-fO-azN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2iM-Q2-aoF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3487" y="250"/>
+            <point key="canvasLocation" x="4030" y="613"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="tro-R4-GHr">
@@ -759,12 +719,11 @@
                             <outlet property="delegate" destination="OiC-Bp-LYh" id="B6v-8f-fjl"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="icF-J6-jPd"/>
                     <navigationItem key="navigationItem" title="Home" id="fTF-8Y-x5d"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VA5-4v-1ZG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="1774"/>
+            <point key="canvasLocation" x="-971" y="1975"/>
         </scene>
         <!--Item Table View Controller-->
         <scene sceneID="CHg-8P-Ezx">
@@ -809,10 +768,11 @@
                             <outlet property="delegate" destination="C2Q-gH-LmK" id="rjX-8W-QoY"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="88T-th-sTS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ozk-ib-yw7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="1773"/>
+            <point key="canvasLocation" x="-161" y="1975"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="WWn-ly-qZ0">
@@ -837,29 +797,68 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Oat-Jc-DIE"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AIn-2T-vzN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ail-Rr-PQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1752" y="1775"/>
+            <point key="canvasLocation" x="600" y="1977"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="NwS-7J-1oy">
+        <!--Settings-->
+        <scene sceneID="CLW-q3-AE5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lSH-ol-R1Y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="fIw-79-gfj"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bYd-Pg-170" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="cu8-Vg-wk6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cwN-pE-dVX">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eBo-RK-h50">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="OiC-Bp-LYh" kind="relationship" relationship="rootViewController" id="UwJ-Z8-NeW"/>
+                        <segue destination="dww-Rj-Edj" kind="relationship" relationship="rootViewController" id="XjJ-xu-Mnf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qe0-LU-vM3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tzm-kt-S9N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-829" y="1774"/>
+            <point key="canvasLocation" x="1622" y="576"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="7kO-df-w5J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G6r-TW-dIN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="icF-J6-jPd"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="H0J-15-d4m">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OiC-Bp-LYh" kind="relationship" relationship="rootViewController" id="hkp-cd-0pL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hug-mY-dtK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1881" y="1975"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="yJA-Ja-vHl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J8K-Wa-pKB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="Aix-vB-bW0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hbR-C7-Zrh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6K3-H2-0Og" kind="relationship" relationship="rootViewController" id="VlA-qk-gxP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cj7-jj-909" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="499" y="1304"/>
         </scene>
     </scenes>
     <resources>
@@ -869,7 +868,6 @@
         <image name="Lifecycle Black PNG" width="2500" height="700"/>
         <image name="Lifecycle White PNG" width="2500" height="700"/>
         <image name="arrow.up" catalog="system" width="60" height="64"/>
-        <image name="arrowshape.turn.up.left.fill" catalog="system" width="64" height="52"/>
         <image name="bell" catalog="system" width="64" height="62"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
         <image name="doc.text" catalog="system" width="56" height="64"/>
@@ -880,7 +878,4 @@
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="questionmark.circle" catalog="system" width="64" height="60"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="pzV-dT-kKM"/>
-    </inferredMetricsTieBreakers>
 </document>

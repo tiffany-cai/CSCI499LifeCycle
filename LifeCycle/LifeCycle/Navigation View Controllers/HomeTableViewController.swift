@@ -14,8 +14,7 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.navigationController?.navigationBar.barTintColor = White
-        self.view.backgroundColor = White
+        
     }
 
     // MARK: - Table view data source

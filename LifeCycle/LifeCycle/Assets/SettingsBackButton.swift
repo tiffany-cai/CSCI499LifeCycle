@@ -21,7 +21,7 @@ class SettingsBackButton: UIButton {
         btnConfig()
     }
     
-    func btnConfig() {
+    private func btnConfig() {
         setTitleColor(UIColor.AppColors.Sage, for: .normal)
         backgroundColor = UIColor.AppColors.DarkOliveGreen
         titleLabel?.font = UIFont(name: "Chalkboard", size: 22)
@@ -29,3 +29,21 @@ class SettingsBackButton: UIButton {
     }
 }
 
+class ConfirmBtn : UIButton {
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        btnConfig()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        btnConfig()
+    }
+    
+    private func btnConfig(){
+        setTitleColor(UIColor.AppColors.Sage, for: .normal)
+        backgroundColor = UIColor.AppColors.DarkOliveGreen
+        titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 22)
+        layer.cornerRadius = self.frame.height / 2
+    }
+}

@@ -61,4 +61,15 @@ class LoginViewController: UIViewController {
      errorLabel.alpha = 1
     }
 
+    
+    
+    @IBAction func DebugTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        
+        Auth.auth().signIn(withEmail: "test@test.com", password: "LifeCycle")
+        
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+    }
+    
 }

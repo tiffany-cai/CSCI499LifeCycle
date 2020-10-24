@@ -26,6 +26,6 @@ class SettingsBackButton: UIButton {
         backgroundColor = UIColor.AppColors.DarkOliveGreen
         titleLabel?.font = UIFont(name: "Chalkboard", size: 22)
         
-        
     }
 }
+

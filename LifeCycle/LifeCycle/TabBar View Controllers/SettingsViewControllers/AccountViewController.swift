@@ -7,35 +7,80 @@
 //
 
 import UIKit
+import Firebase
 
 class AccountViewController: UIViewController {
 
-
+    @IBOutlet weak var CurEM: UITextField!
+    @IBOutlet weak var NewEM: UITextField!
+    @IBOutlet weak var NewPass: UITextField!
+    @IBOutlet weak var ReNewPass: UITextField!
+    @IBOutlet weak var EmErrLbl: UILabel!
+    @IBOutlet weak var PassErrLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set BG
         self.view.backgroundColor = UIColor.AppColors.AshGrey
-        // Do any additional setup after loading the view.
+        // Config Error Labels
+        EmErrLbl.alpha = 0;
+        PassErrLbl.alpha = 0;
     }
     
-    @IBAction func BackBtn(_ sender: Any) {
-
-        // Return to Setting Page
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let SettingsVC = storyboard.instantiateViewController(identifier: "SettingsViewController")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(SettingsVC)
+    
+    @IBAction func ChangeEMbtn(_ sender: Any) {
+        let userEmail = Auth.auth().currentUser?.email
         
+        // Check if current email matches email on DB
+        // Check if New Email text field isnt empty
+        if CurEM.text == userEmail! && NewEM.text != nil {
+            Auth.auth().currentUser?.updateEmail(to: NewEM.text!){ (error) in
+                if let error = error {
+                    self.showEmError("\(error.localizedDescription)")
+                }
+                else {
+                    self.CurEM.text = ""
+                    self.NewEM.text = ""
+                
+                    self.EmErrLbl.text = "Success"
+                    self.EmErrLbl.backgroundColor = UIColor.green
+                    self.EmErrLbl.alpha = 1
+                }
+            
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func showEmError(_ message:String){
+     EmErrLbl.text = message
+     EmErrLbl.alpha = 1
     }
-    */
-
+        
+    
+    @IBAction func ChangePassbtn(_ sender: Any) {
+        // If Passwords match
+        if NewPass.text! == ReNewPass.text! {
+            // Change password
+            Auth.auth().currentUser?.updatePassword(to: NewPass.text!) { (error) in
+                if let error = error {
+                    self.showPassError("\(error.localizedDescription)")
+                }
+                else {
+                    self.NewPass.text = ""
+                    self.ReNewPass.text = ""
+                    
+                    self.PassErrLbl.text = "Success"
+                    self.PassErrLbl.backgroundColor = UIColor.green
+                    self.PassErrLbl.alpha = 1
+                }
+            }
+        }
+    }
+    
+    
+    func showPassError(_ message:String){
+     PassErrLbl.text = message
+     PassErrLbl.alpha = 1
+    }
+    
 }

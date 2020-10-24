@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
+        // Universal Tab Bar Configs
+        UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().barTintColor = UIColor.AppColors.DarkOliveGreen
+        
+        //Universal Navigation Bar Configs
+        UINavigationBar.appearance().barTintColor = UIColor.AppColors.DarkOliveGreen
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.black]
+        UINavigationBar.appearance().tintColor = UIColor.black
+        
         return true
     }
 

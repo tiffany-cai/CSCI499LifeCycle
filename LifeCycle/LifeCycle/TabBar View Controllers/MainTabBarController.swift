@@ -13,6 +13,8 @@ class MainTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Change BG Color
+        
         
         //ref to db
         let db = Firestore.firestore()

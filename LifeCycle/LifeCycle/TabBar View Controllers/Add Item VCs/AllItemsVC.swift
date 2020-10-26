@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddItemViewController: UIViewController {
+class AllItemsVC: UIViewController {
 
     /*
      Item struct for DB
@@ -40,7 +40,7 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.view.backgroundColor = UIColor.AppColors.AshGrey
     }
     
 }

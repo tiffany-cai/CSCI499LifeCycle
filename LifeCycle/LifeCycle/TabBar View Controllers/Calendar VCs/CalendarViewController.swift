@@ -38,15 +38,17 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.scope = .month
         self.view.addSubview(calendar)
         calendar.appearance.titleFont = UIFont.systemFont(ofSize: 16.0)
-        calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 14.0)
+        calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 18.0)
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 15.0)
         
-        calendar.appearance.todayColor = .systemGreen
+        calendar.appearance.todayColor = UIColor.AppColors.ArmyGreen
         calendar.appearance.titleTodayColor = .white
-        calendar.appearance.titleDefaultColor = .systemTeal
+        calendar.appearance.titleDefaultColor = UIColor.AppColors.Opal
         
-        calendar.appearance.headerTitleColor = .systemPink
-        calendar.appearance.weekdayTextColor = .systemRed
+        calendar.appearance.headerTitleColor = UIColor.AppColors.DarkOliveGreen
+        //calendar.appearance.headerTitleColor = .systemPink
+        calendar.appearance.weekdayTextColor = UIColor.AppColors.AshGrey
+    
         //calendar.calendarHeaderView.collectionViewLayout =
         //calendar.appearance.headerTitleTextSize = 18.0
 
@@ -66,7 +68,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
-        return Date().addingTimeInterval((24*60*60)*60)
+        return Date().addingTimeInterval((24*60*60)*3666);
     }
     // this places a dot on date with an event
     func calendar(_ calendar:FSCalendar, numberOfEventsFor date: Date) -> Int {
@@ -133,8 +135,22 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
        // self.calendar = calendar
 
+    
+    // MARK: - Table view data source
 
+     func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
+
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+}
+
+
+    
 
 
 //extension UIViewController: FSCalendarDataSource,FSCalendarDelegate{

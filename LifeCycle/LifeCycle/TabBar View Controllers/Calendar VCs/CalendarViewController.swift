@@ -31,8 +31,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 40.0, width: self.view.frame.size.width,height: 300.0))
-        calendar.scrollDirection = .horizontal
+        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 100.0,
+                                            width: self.view.frame.size.width,
+                                            height: self.view.frame.size.width))
+        calendar.scrollDirection = .vertical
         calendar.scope = .month
         self.view.addSubview(calendar)
         calendar.appearance.titleFont = UIFont.systemFont(ofSize: 16.0)

@@ -7,16 +7,39 @@
 
 import UIKit
 
+//delete later, this is for testing purposes. connect with database later
+class Items {
+    var ItemName: String?
+    var ItemInfo: String?
+    
+    init(IName:String, IInfo:String) {
+        self.ItemName = IName
+        self.ItemInfo = IInfo
+    }
+}
+//end of delete later
+
 class ItemTableViewController: UITableViewController {
+    
+    @IBOutlet weak var ItemList: UITableView!
+        
+    var ItemListArray = [Items]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //for test, delete after connecting with database
+        let ACfilter = Items(IName: "AC filters", IInfo: "Reccomended maintenance in 2 weeks")
+        ItemListArray.append(ACfilter)
+        
+        let Mattress = Items(IName: "Bedroom Mattress", IInfo: "Reccomended maintenance in 7 years")
+        ItemListArray.append(Mattress)
+        //end delete
+        
+        ItemList.delegate = self
+        ItemList.dataSource = self
     }
 
     // MARK: - Table view data source
@@ -27,18 +50,27 @@ class ItemTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ItemListArray.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        var cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! ItemListCell
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "ListCell") as! ItemListCell
+        }
+        
+        cell.labelItemName.text = ItemListArray[indexPath.row].ItemName
+        
+        cell.labelItemDetail?.text = ItemListArray[indexPath.row].ItemInfo
+        
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "ShowDetail", sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -75,14 +107,15 @@ class ItemTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let destination = segue.destination as? DetailViewController {
+            destination.Item = ItemListArray[(ItemList.indexPathForSelectedRow?.row)!]
+        }
     }
-    */
+    
 
 }

@@ -114,6 +114,8 @@ class ItemTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailViewController {
             destination.Item = ItemListArray[(ItemList.indexPathForSelectedRow?.row)!]
+            ItemList.deselectRow(at: ItemList.indexPathForSelectedRow!, animated: true)
+
         }
     }
     

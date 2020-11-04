@@ -28,13 +28,14 @@ class ItemTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor.AppColors.AshGrey
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+
         //for test, delete after connecting with database
-        let ACfilter = Items(IName: "AC filters", IInfo: "Reccomended maintenance in 2 weeks")
+        let ACfilter = Items(IName: "AC filters", IInfo: "Maintenance in 2 weeks")
         ItemListArray.append(ACfilter)
         
-        let Mattress = Items(IName: "Bedroom Mattress", IInfo: "Reccomended maintenance in 7 years")
+        let Mattress = Items(IName: "Bedroom Mattress", IInfo: "Maintenance in 7 years")
         ItemListArray.append(Mattress)
         //end delete
         
@@ -63,7 +64,7 @@ class ItemTableViewController: UITableViewController {
         cell.labelItemName.text = ItemListArray[indexPath.row].ItemName
         
         cell.labelItemDetail?.text = ItemListArray[indexPath.row].ItemInfo
-        
+        cell.contentView.backgroundColor = UIColor.AppColors.AshGrey
         return cell
     }
     
@@ -71,6 +72,10 @@ class ItemTableViewController: UITableViewController {
         //tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "ShowDetail", sender: self)
     }
+    /*
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.AppColors.AshGrey
+    }*/
 
     /*
     // Override to support conditional editing of the table view.

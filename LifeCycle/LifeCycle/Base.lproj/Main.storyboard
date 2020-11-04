@@ -830,7 +830,7 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Cg-Xy-AyA" secondAttribute="trailing" constant="20" symbolic="YES" id="eV6-J2-doH"/>
                                         <constraint firstItem="OQq-UI-A0u" firstAttribute="top" secondItem="jij-Lo-Wjz" secondAttribute="top" constant="10" id="fhQ-Pn-WGz"/>
                                         <constraint firstItem="8Cg-Xy-AyA" firstAttribute="trailing" secondItem="jij-Lo-Wjz" secondAttribute="trailingMargin" id="mhK-Xl-JZr"/>
-                                        <constraint firstItem="8Cg-Xy-AyA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OQq-UI-A0u" secondAttribute="trailing" symbolic="YES" id="nXb-px-8C3"/>
+                                        <constraint firstItem="8Cg-Xy-AyA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OQq-UI-A0u" secondAttribute="trailing" constant="8" symbolic="YES" id="nXb-px-8C3"/>
                                         <constraint firstItem="8Cg-Xy-AyA" firstAttribute="leading" secondItem="jij-Lo-Wjz" secondAttribute="leading" constant="128" id="o80-zK-Oe8"/>
                                         <constraint firstItem="DjB-h3-w8S" firstAttribute="centerY" secondItem="OQq-UI-A0u" secondAttribute="centerY" constant="14" id="zUc-hH-42j"/>
                                     </constraints>

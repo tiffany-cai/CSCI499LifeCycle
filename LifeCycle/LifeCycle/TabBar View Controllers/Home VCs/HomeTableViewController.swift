@@ -29,6 +29,7 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor.AppColors.AshGrey
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         //tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeCell")
@@ -72,6 +73,8 @@ class HomeTableViewController: UITableViewController {
         cell.labelHomeItemName.text = HomeItemArray[indexPath.row].HomeItemName
         
         cell.labelHomeItemInfo?.text = HomeItemArray[indexPath.row].HomeItemInfo
+        
+        cell.contentView.backgroundColor = UIColor.AppColors.AshGrey
         
         return cell
     }

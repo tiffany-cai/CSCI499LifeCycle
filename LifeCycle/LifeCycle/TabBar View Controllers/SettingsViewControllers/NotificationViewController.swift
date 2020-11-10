@@ -97,6 +97,7 @@ class NotificationViewController: UIViewController {
         let SettingsVC = storyboard.instantiateViewController(identifier: "SettingsViewController")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(SettingsVC)
     }
+    
     @IBAction func BackBtn(_ sender: Any) {
         print("tapped")
              //(UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)

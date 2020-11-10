@@ -16,5 +16,10 @@ class AddItemFormVC: UIViewController {
         self.view.backgroundColor = UIColor.AppColors.AshGrey
     }
     
-
+    @IBAction func confirmBtc(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let AllVC = storyboard.instantiateViewController(identifier: "AllItemsVC")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(AllVC)
+    }
+    
 }

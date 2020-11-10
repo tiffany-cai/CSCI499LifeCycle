@@ -152,7 +152,7 @@
         <!--Items-->
         <scene sceneID="dUR-xB-iRE">
             <objects>
-                <viewController id="ZgD-4O-GZx" customClass="AllItemsVC" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllItemsVC" id="ZgD-4O-GZx" customClass="AllItemsVC" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="swH-ei-bIC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,6 +227,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmBtc:" destination="FI3-4y-veZ" eventType="touchUpInside" id="El6-fM-jsv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

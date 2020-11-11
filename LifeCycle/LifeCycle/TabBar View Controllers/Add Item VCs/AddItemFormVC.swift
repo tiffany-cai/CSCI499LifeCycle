@@ -24,8 +24,12 @@ public struct Item: Codable {
 
 class AddItemFormVC: UIViewController {
 
-    @IBOutlet weak var itemName: UITextField!
-   
+
+    @IBOutlet weak var buttonCancel: UIBarButtonItem!
+    @IBOutlet weak var labelItemName: UILabel!
+    @IBOutlet weak var textfieldItemName: UITextField!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,4 +75,5 @@ class AddItemFormVC: UIViewController {
     
 
     
+
 }

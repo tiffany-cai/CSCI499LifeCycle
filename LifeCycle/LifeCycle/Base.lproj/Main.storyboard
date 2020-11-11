@@ -187,11 +187,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MIn-7o-d8V"/>
                     </view>
-
                     <navigationItem key="navigationItem" title="Add Item" id="j95-qJ-dDB">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="pZb-Ia-SLp">
                             <connections>
-                                <action selector="buttonCancelTapped:" destination="FI3-4y-veZ" id="anF-KT-YDa"/>
+                                <action selector="buttonCancelTapped:" destination="FI3-4y-veZ" id="Var-hT-RH3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -199,7 +198,6 @@
                         <outlet property="buttonCancel" destination="pZb-Ia-SLp" id="wco-Cx-nie"/>
                         <outlet property="labelItemName" destination="vUr-mJ-BJW" id="2VT-5B-k0I"/>
                         <outlet property="textfieldItemName" destination="Rbz-kd-123" id="nrb-5w-gTx"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HQ-iS-Pyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -171,10 +171,10 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return calItemArray.count
     }
         
-        
+      
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "Cal", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+        //performSegue(withIdentifier: "Cal", sender: self)
     }
         
         

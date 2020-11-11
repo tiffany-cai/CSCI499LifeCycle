@@ -84,11 +84,11 @@ class HomeTableViewController: UITableViewController {
         return cell
     }
     
-    /*
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "ShowItems", sender: self)
-    }*/
+        //performSegue(withIdentifier: "ShowItems", sender: self)
+    }
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

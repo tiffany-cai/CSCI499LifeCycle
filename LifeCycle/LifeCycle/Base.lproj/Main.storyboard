@@ -223,12 +223,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c60-x6-Dbe" customClass="ConfirmBtn" customModule="LifeCycle" customModuleProvider="target">
-                                <rect key="frame" x="168" y="597" width="87" height="42"/>
+                                <rect key="frame" x="163" y="597" width="97" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Confirm"/>
+                                <state key="normal" title="Add Item"/>
                                 <connections>
-                                    <action selector="confirmBtc:" destination="FI3-4y-veZ" eventType="touchUpInside" id="El6-fM-jsv"/>
+                                    <action selector="addItemBtn:" destination="FI3-4y-veZ" eventType="touchUpInside" id="FrC-SG-LZ8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,6 +236,9 @@
                         <viewLayoutGuide key="safeArea" id="MIn-7o-d8V"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Item" id="j95-qJ-dDB"/>
+                    <connections>
+                        <outlet property="itemName" destination="Rbz-kd-123" id="yJ5-nC-Y28"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HQ-iS-Pyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,7 +16,6 @@ public struct Item: Codable {
 
     enum CodingKeys: String, CodingKey {
         case name
-        
     }
 
 }

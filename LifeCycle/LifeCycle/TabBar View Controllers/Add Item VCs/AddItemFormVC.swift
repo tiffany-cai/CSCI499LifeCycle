@@ -16,7 +16,6 @@ public struct Item: Codable {
 
     enum CodingKeys: String, CodingKey {
         case name
-        
     }
 
 }
@@ -72,6 +71,9 @@ class AddItemFormVC: UIViewController {
         addRefToUserList(itemRef: newItemRef.documentID, userID: userID)
     }
     
+    @IBAction func buttonCancelTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
 
     

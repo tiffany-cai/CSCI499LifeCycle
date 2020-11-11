@@ -190,7 +190,7 @@
                     <navigationItem key="navigationItem" title="Add Item" id="j95-qJ-dDB">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="pZb-Ia-SLp">
                             <connections>
-                                <action selector="buttonCancelTapped:" destination="FI3-4y-veZ" id="anF-KT-YDa"/>
+                                <action selector="buttonCancelTapped:" destination="FI3-4y-veZ" id="Var-hT-RH3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

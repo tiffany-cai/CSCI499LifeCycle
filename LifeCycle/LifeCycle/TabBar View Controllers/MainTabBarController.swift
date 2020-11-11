@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController {
                 if document != nil && document!.exists {
                     let documentData = document!.data()
                     
-                    print(documentData!)
+                    //print(documentData!)
                     
                 }
             }

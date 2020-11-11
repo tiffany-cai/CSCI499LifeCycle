@@ -168,12 +168,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c60-x6-Dbe" customClass="ConfirmBtn" customModule="LifeCycle" customModuleProvider="target">
-                                <rect key="frame" x="168" y="597" width="87" height="42"/>
+                                <rect key="frame" x="163" y="597" width="97" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Confirm"/>
+                                <state key="normal" title="Add Item"/>
                                 <connections>
-                                    <action selector="confirmBtc:" destination="FI3-4y-veZ" eventType="touchUpInside" id="El6-fM-jsv"/>
+                                    <action selector="addItemBtn:" destination="FI3-4y-veZ" eventType="touchUpInside" id="FrC-SG-LZ8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUr-mJ-BJW">
@@ -187,6 +187,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MIn-7o-d8V"/>
                     </view>
+
                     <navigationItem key="navigationItem" title="Add Item" id="j95-qJ-dDB">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="pZb-Ia-SLp">
                             <connections>
@@ -198,6 +199,7 @@
                         <outlet property="buttonCancel" destination="pZb-Ia-SLp" id="wco-Cx-nie"/>
                         <outlet property="labelItemName" destination="vUr-mJ-BJW" id="2VT-5B-k0I"/>
                         <outlet property="textfieldItemName" destination="Rbz-kd-123" id="nrb-5w-gTx"/>
+
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HQ-iS-Pyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

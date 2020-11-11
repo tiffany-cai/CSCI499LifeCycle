@@ -18,7 +18,8 @@ class MainTabBarController: UITabBarController {
         
         //ref to db
         let db = Firestore.firestore()
-        db.collection("users").document("\(Auth.auth().currentUser!.uid)").getDocument { (document, err) in
+        db.collection("users").document("\(Auth.auth().currentUser!.uid)").getDocument
+        { (document, err) in
             //Check for error aka uid doesnt exist
             if err == nil{
                 //check it exists in the collection

@@ -11,7 +11,22 @@
 import UIKit
 import FSCalendar
 
-class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource,FSCalendarDelegateAppearance  {
+
+
+class calItems {
+    var calItemName: String?
+    var calItemInfo: String?
+    
+    init(cal_list:String, cal_info:String) {
+        self.calItemName = cal_list
+        self.calItemInfo = cal_info
+    }
+}
+
+class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, FSCalendarDelegate, FSCalendarDataSource,FSCalendarDelegateAppearance  {
+    
+    
+//
     /*
      as a user I want to ...
      - delete items
@@ -25,12 +40,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
      
      */
     
+    @IBOutlet weak var CalList: UITableView!
+
+    var calItemArray = [calItems]()
     var calendar:FSCalendar!
     var formatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         calendar = FSCalendar(frame: CGRect(x: 0.0, y: 100.0,
                                             width: self.view.frame.size.width,
                                             height: self.view.frame.size.width))
@@ -55,11 +73,46 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
         calendar.delegate = self
         calendar.dataSource = self
+    
+        calendar.allowsMultipleSelection = false
         
-        calendar.allowsMultipleSelection = true
+        
+        let NemoHouse = calItems(cal_list: "Nemo's House", cal_info: "42 Wallaby Way, Sydney")
+        calItemArray.append(NemoHouse)
+        
+        let SimpsonHouse = calItems(cal_list: "Simpson's House", cal_info: "742 Evergreen Terrace")
+        calItemArray.append(SimpsonHouse)
+
+        let Apartment = calItems(cal_list: "My Apartment", cal_info: "stuytown")
+        calItemArray.append(Apartment)
+
+        let Car = calItems(cal_list: "Pearl", cal_info: "Lexus LFA")
+        calItemArray.append(Car)
+        //end of delete
+        
+        
+        CalList.delegate = self
+        CalList.dataSource = self
+
+        
         
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    var cell = tableView.dequeueReusableCell(withIdentifier: "CalCell", for: indexPath) as! CalendarTableViewCell
+    
+        if cell == nil {
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CalCell") as! CalendarTableViewCell
+    }
+    
+        cell.labelcallItemName.text = calItemArray[indexPath.row].calItemName
+    
+        cell.labelcallItemDetail.text = calItemArray[indexPath.row].calItemInfo
+    
+    return cell
+    
+    }
 
     // datasource
     // this marks the current date
@@ -73,9 +126,9 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     // this places a dot on date with an event
     func calendar(_ calendar:FSCalendar, numberOfEventsFor date: Date) -> Int {
            formatter.dateFormat = "dd-MM-yyyy"
-             guard let eventDate = formatter.date(from: "25-10-2020") else { return  0}
+             guard let eventDate = formatter.date(from: "25-11-2020") else { return  0}
         if date.compare(eventDate) == .orderedSame {
-            return 5
+            return 2
         }
         return 0
     }
@@ -107,17 +160,22 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         formatter.dateFormat = "dd-MM-yyyy"
-        guard let excludedDate = formatter.date(from: "26-10-2020") else { return nil}
+        guard let excludedDate = formatter.date(from: "06-11-2020") else { return nil}
         if date.compare(excludedDate) == .orderedSame {
             return .purple
             }
         return nil
     }
         
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return calItemArray.count
+    }
         
         
-        
-        
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "Cal", sender: self)
+    }
         
         
         
@@ -140,13 +198,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
      func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+    
 }
 
 

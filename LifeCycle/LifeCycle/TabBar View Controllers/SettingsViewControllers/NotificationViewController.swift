@@ -100,6 +100,7 @@ class NotificationViewController: UIViewController {
     
     @IBAction func BackBtn(_ sender: Any) {
         print("tapped")
+        
              //(UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
         
         // Return to Setting Page

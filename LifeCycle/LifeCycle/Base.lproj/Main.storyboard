@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="pgn-9d-d6i">
-                                <rect key="frame" x="60" y="469" width="294" height="221"/>
+                                <rect key="frame" x="60" y="262" width="294" height="428"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RF-mf-6sE">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="138"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="40" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Facebook" backgroundImage="FB">
@@ -27,14 +27,14 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z15-qa-SVu">
-                                        <rect key="frame" x="0.0" y="76" width="294" height="69"/>
+                                        <rect key="frame" x="0.0" y="145" width="294" height="138"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="60" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Google" backgroundImage="Google">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoC-mE-SYJ">
-                                        <rect key="frame" x="0.0" y="152" width="294" height="69"/>
+                                        <rect key="frame" x="0.0" y="290" width="294" height="138"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="70" maxY="0.0"/>
                                         <state key="normal" title="Sign in with Email" backgroundImage="Email">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +154,7 @@
             <objects>
                 <viewController id="FI3-4y-veZ" customClass="AddItemFormVC" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9IQ-pv-pUz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-Sv-ZBK">
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HQ-iS-Pyb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810.14492753623199" y="1974.7767857142856"/>
+            <point key="canvasLocation" x="-23.188405797101453" y="1974.7767857142856"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="alF-lh-H9T">
@@ -836,7 +836,7 @@
                     <navigationItem key="navigationItem" title="Home" id="fTF-8Y-x5d">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" style="plain" id="RQL-OP-5Pr">
                             <connections>
-                                <segue destination="QvY-Cj-sD5" kind="presentation" id="cW5-98-0ei"/>
+                                <segue destination="FI3-4y-veZ" kind="show" id="uIo-s2-5yX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -904,24 +904,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cj7-jj-909" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1408.6956521739132" y="1303.7946428571429"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3jx-dr-zcz">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QvY-Cj-sD5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f6s-Q3-ZkJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="FI3-4y-veZ" kind="relationship" relationship="rootViewController" id="VPa-1E-KXd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Usf-60-h7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-100.00000000000001" y="1974.7767857142856"/>
         </scene>
     </scenes>
     <resources>

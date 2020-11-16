@@ -44,12 +44,24 @@ class AddItemFormVC: UIViewController {
     
     // add item to users list of items
     func addRefToUserList(item: Item){
+        
+        print(item)
+        print(item.refID)
+        print(item.name)
+        
         let userID = Auth.auth().currentUser!.uid
+        print(userID)
         //ref to db
-        //let db = Firestore.firestore()
+        let db = Firestore.firestore()
         var ref: DatabaseReference!
         ref = Database.database().reference()
-
+        
+        let userRef = db.collection("users").document("\(userID)")
+        
+        print(userRef)
+        
+    ref.child("users").child("\(userID)").child("items").setValue(["refID": item.refID])
+        
         /*ref.child("users").child(userID).child("items").setValue(
             [
                 "refID": item.refID,
@@ -105,7 +117,9 @@ class AddItemFormVC: UIViewController {
         //print(Newitem) // Item(name: "Testitem")
         //print(newItemRef.documentID) // idruO37rH0hmFOPPuRfp
         
-        addRefToUserList(item: Newitem)
+       addRefToUserList(item: Newitem)
+        
+        
  
     }
     

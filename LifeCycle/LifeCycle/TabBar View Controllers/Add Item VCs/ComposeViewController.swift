@@ -14,10 +14,34 @@ class ComposeViewController: UIViewController {
 
     var ref : DatabaseReference?
     @IBOutlet weak var itemName: UITextField!
+    @IBOutlet weak var house: UIButton!
+    @IBOutlet weak var vehicle: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
        
+    }
+    @IBAction func house(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            vehicle.isSelected = false
+        }
+        else {
+            sender.isSelected = true
+            vehicle.isSelected = false
+        }
+    }
+    
+    @IBAction func vehicle(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            house.isSelected = false
+        }
+        else {
+            sender.isSelected = true
+            house.isSelected = false
+        }
     }
     
     @IBAction func addPost(_ sender: Any) {

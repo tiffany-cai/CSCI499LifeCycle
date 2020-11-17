@@ -36,9 +36,13 @@ class AddItemFormVC: UIViewController {
     @IBOutlet weak var textfieldItemName: UITextField!
     
 
+    var ref: DatabaseReference!
+    var db = Firestore.firestore()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = Database.database().reference()
+        
         self.view.backgroundColor = UIColor.AppColors.AshGrey
     }
     
@@ -52,15 +56,15 @@ class AddItemFormVC: UIViewController {
         let userID = Auth.auth().currentUser!.uid
         print(userID)
         //ref to db
-        let db = Firestore.firestore()
-        var ref: DatabaseReference!
+        //let db = Firestore.firestore()
+        //var ref: DatabaseReference!
         ref = Database.database().reference()
         
         let userRef = db.collection("users").document("\(userID)")
         
         print(userRef)
         
-    ref.child("users").child("\(userID)").child("items").setValue(["refID": item.refID])
+        ref.child("users").child("\(userID)").child("items").setValue(["refID": item.refID])
         
         /*ref.child("users").child(userID).child("items").setValue(
             [

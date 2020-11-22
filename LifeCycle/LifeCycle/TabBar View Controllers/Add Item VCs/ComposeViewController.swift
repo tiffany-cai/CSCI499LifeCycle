@@ -47,6 +47,7 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func addPost(_ sender: Any) {
+        /* Test to add item objects
         // Get user ID
         let userID = Auth.auth().currentUser!.uid
         // post to firebase
@@ -65,8 +66,10 @@ class ComposeViewController: UIViewController {
                 self.presentingViewController?.dismiss(animated: true, completion: nil)
             }
         })
+        */
         
-        /*Old Code for String objects DO NOT DELETE
+        
+        /*Old Code for String objects DO NOT DELETE*/
          // Get user ID
          let userID = Auth.auth().currentUser!.uid
          // post to firebase
@@ -74,8 +77,7 @@ class ComposeViewController: UIViewController {
          
          // dismiss popover
          presentingViewController?.dismiss(animated: true, completion: nil)
-         */
-        
+         
         // dismiss popover
         //presentingViewController?.dismiss(animated: true, completion: nil)
     }

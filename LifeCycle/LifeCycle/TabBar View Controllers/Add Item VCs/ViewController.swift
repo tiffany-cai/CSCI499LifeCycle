@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
-        // Get items
+        // Get ref to db
         ref = Database.database().reference()
         // Get user ID
         let userID = Auth.auth().currentUser!.uid
@@ -34,6 +34,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         // should be item instead of string
         let post = snapshot.value as? String
+        
+        /*
+        print("\n POST \n")
+        print(post)
+        print("\n Snap \n")
+        print(snapshot)
+        print("\n Snap Value \n")
+        print(snapshot.value)
+ */
         
         if let actualPost = post {
             self.postData.append(actualPost)

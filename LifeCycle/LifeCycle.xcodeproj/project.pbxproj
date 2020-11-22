@@ -32,6 +32,7 @@
 		6F27DFAF2532483400112385 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F27DFAE2532483400112385 /* CalendarViewController.swift */; };
 		6FCD99EB2563FCDF0010A068 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD99EA2563FCDF0010A068 /* ComposeViewController.swift */; };
 		6FCD99ED2563FF2F0010A068 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD99EC2563FF2F0010A068 /* ViewController.swift */; };
+		6FCD99F02564BD4E0010A068 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCD99EF2564BD4E0010A068 /* ItemModel.swift */; };
 		6FCF67D32546762F0064BD8E /* AddItemFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCF67D22546762F0064BD8E /* AddItemFormVC.swift */; };
 		896EF9CE25480B2E002FC5F2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EF9CD25480B2E002FC5F2 /* HomeTableViewCell.swift */; };
 		89746D3A253F957C000767F6 /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89746D39253F957C000767F6 /* UIColors.swift */; };
@@ -67,6 +68,7 @@
 		6F27DFAE2532483400112385 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6FCD99EA2563FCDF0010A068 /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		6FCD99EC2563FF2F0010A068 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FCD99EF2564BD4E0010A068 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		6FCF67D22546762F0064BD8E /* AddItemFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemFormVC.swift; sourceTree = "<group>"; };
 		896EF9CD25480B2E002FC5F2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		89746D39253F957C000767F6 /* UIColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColors.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		6F27DF9E251D6CB200112385 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6FCD99EE2564BD280010A068 /* Models */,
 				6F0E4581253E5CDC002E7D22 /* IMG_5855.JPG */,
 				6F0E457D253E5261002E7D22 /* SettingsBackButton.swift */,
 				6F0E457F253E5907002E7D22 /* AppColors.swift */,
@@ -168,6 +171,14 @@
 				6F0E4575253E46CF002E7D22 /* SettingsViewControllers */,
 			);
 			path = "TabBar View Controllers";
+			sourceTree = "<group>";
+		};
+		6FCD99EE2564BD280010A068 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6FCD99EF2564BD4E0010A068 /* ItemModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6FCF67CF2546743A0064BD8E /* Add Item VCs */ = {
@@ -343,6 +354,7 @@
 				6F0E458C2544CFEB002E7D22 /* CustomLabels.swift in Sources */,
 				6F0E457B253E48CF002E7D22 /* SupportViewController.swift in Sources */,
 				6F0E4580253E5907002E7D22 /* AppColors.swift in Sources */,
+				6FCD99F02564BD4E0010A068 /* ItemModel.swift in Sources */,
 				6F0E4579253E4865002E7D22 /* NotificationViewController.swift in Sources */,
 				6F0E457E253E5261002E7D22 /* SettingsBackButton.swift in Sources */,
 				6F27DFA0251E89B600112385 /* LoginNavigationController.swift in Sources */,

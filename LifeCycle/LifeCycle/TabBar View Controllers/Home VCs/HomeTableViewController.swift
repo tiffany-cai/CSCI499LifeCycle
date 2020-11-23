@@ -34,7 +34,7 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.AppColors.AshGrey
+       // self.view.backgroundColor = UIColor.AppColors.AshGrey
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         //tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeCell")

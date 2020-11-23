@@ -10,15 +10,21 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
+
 class ComposeViewController: UIViewController {
 
     var ref : DatabaseReference?
+    
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var house: UIButton!
     @IBOutlet weak var vehicle: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationController?.navigationBar.barTintColor = SteelTeal
+        //self.view.backgroundColor = White
+        
+
         ref = Database.database().reference()
        
     }
@@ -45,13 +51,39 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func addPost(_ sender: Any) {
+        /* Test to add item objects
         // Get user ID
         let userID = Auth.auth().currentUser!.uid
         // post to firebase
-        ref?.child("users").child(userID).child("items").childByAutoId().setValue(itemName.text)
         
+        // 1. Make item reference
+        let itemRef = ref?.child("users").child(userID).child("items").childByAutoId()
+        // 2. create object
+            let itemObject = [
+                "name" : itemName.text as Any,
+                "date": "12-31-2020"
+            ] as [String: Any]
+        
+        // 3. Add object to firebase
+        itemRef?.setValue(itemObject, withCompletionBlock: { (err, ref) in
+            if err == nil {
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            }
+        })
+        */
+        
+        
+        /*Old Code for String objects DO NOT DELETE*/
+         // Get user ID
+         let userID = Auth.auth().currentUser!.uid
+         // post to firebase
+         ref?.child("users").child(userID).child("items").childByAutoId().setValue(itemName.text)
+         
+         // dismiss popover
+         presentingViewController?.dismiss(animated: true, completion: nil)
+         
         // dismiss popover
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        //presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelPost(_ sender: Any) {

@@ -40,7 +40,7 @@ class AllItemsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.AppColors.AshGrey
+        //self.view.backgroundColor = UIColor.AppColors.AshGrey
     }
     
 }

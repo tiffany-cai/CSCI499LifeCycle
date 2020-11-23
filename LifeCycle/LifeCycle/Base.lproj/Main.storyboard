@@ -204,7 +204,7 @@
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="1974.7767857142856"/>
         </scene>
-        <!--Calendar View Controller-->
+        <!--Calendar-->
         <scene sceneID="alF-lh-H9T">
             <objects>
                 <viewController id="6K3-H2-0Og" customClass="CalendarViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -262,7 +262,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="rw6-Ju-Ecj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="s86-ey-0nR"/>
+                    <navigationItem key="navigationItem" title="Calendar" id="s86-ey-0nR"/>
                     <connections>
                         <outlet property="CalList" destination="uUO-Pe-xvq" id="klP-dj-dWm"/>
                     </connections>
@@ -275,7 +275,7 @@
         <scene sceneID="2Gv-je-a7L">
             <objects>
                 <navigationController id="ktI-yt-924" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="KJm-ll-PsO"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="house.fill" catalog="system" id="KJm-ll-PsO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kuF-DA-83M">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -291,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="-3104" y="1106"/>
         </scene>
-        <!--View Controller-->
+        <!--Items-->
         <scene sceneID="oj6-He-PR1">
             <objects>
                 <viewController id="Gsb-oy-Oks" customClass="ViewController" customModule="LifeCycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,7 +323,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZeX-ao-Q9T"/>
                     </view>
-                    <navigationItem key="navigationItem" id="R3H-pg-I0M">
+                    <navigationItem key="navigationItem" title="Items" id="R3H-pg-I0M">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fLt-Jy-fD9">
                             <connections>
                                 <segue destination="nOt-2y-rf0" kind="presentation" id="12z-Fz-me9"/>
@@ -441,7 +441,15 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fbi-iV-0mb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.47843137250000001" green="0.56862745100000001" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="ktI-yt-924" kind="relationship" relationship="viewControllers" id="t8o-Ts-Wqb"/>

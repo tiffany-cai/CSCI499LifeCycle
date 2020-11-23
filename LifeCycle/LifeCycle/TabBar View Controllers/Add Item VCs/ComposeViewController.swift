@@ -21,6 +21,10 @@ class ComposeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.navigationController?.navigationBar.barTintColor = SteelTeal
+        //self.view.backgroundColor = White
+        
+
         ref = Database.database().reference()
        
     }

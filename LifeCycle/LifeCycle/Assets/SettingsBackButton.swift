@@ -22,8 +22,8 @@ class SettingsBackButton: UIButton {
     }
     
     private func btnConfig() {
-        setTitleColor(UIColor.AppColors.Sage, for: .normal)
-        backgroundColor = UIColor.AppColors.DarkOliveGreen
+        setTitleColor(White, for: .normal)
+        backgroundColor = SteelTeal
         titleLabel?.font = UIFont(name: "Chalkboard", size: 22)
         
     }
@@ -41,8 +41,8 @@ class ConfirmBtn : UIButton {
     }
     
     private func btnConfig(){
-        setTitleColor(UIColor.AppColors.Sage, for: .normal)
-        backgroundColor = UIColor.AppColors.DarkOliveGreen
+        setTitleColor(White, for: .normal)
+        backgroundColor = SteelTeal
         titleLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 22)
         layer.cornerRadius = self.frame.height / 2
     }

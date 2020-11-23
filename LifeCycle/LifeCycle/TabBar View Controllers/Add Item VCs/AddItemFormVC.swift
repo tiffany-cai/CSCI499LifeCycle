@@ -43,7 +43,7 @@ class AddItemFormVC: UIViewController {
         super.viewDidLoad()
         ref = Database.database().reference()
         
-        self.view.backgroundColor = UIColor.AppColors.AshGrey
+        //self.view.backgroundColor = UIColor.AppColors.AshGrey
     }
     
     // add item to users list of items

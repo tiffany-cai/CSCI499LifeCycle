@@ -26,11 +26,12 @@ class NavBarConfig: UINavigationBar {
     }
     
     func setBGColor(){
-        //self.backgroundColor = UIColor.AppColors.DarkOliveGreen
-        self.barTintColor = UIColor.AppColors.DarkOliveGreen
+        self.barTintColor = SteelTeal
+        self.backgroundColor = White
+
     }
     
     func setBackBtn(){
-        self.tintColor = UIColor.black
+        self.tintColor = SteelTeal
     }
 }

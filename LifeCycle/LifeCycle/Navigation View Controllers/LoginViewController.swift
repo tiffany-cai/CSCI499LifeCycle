@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class LoginViewController: UIViewController {
 
     
@@ -18,6 +19,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel : UILabel!
     
+    @IBOutlet weak var showpass: UIButton!
+    
+    
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,7 @@ class LoginViewController: UIViewController {
         self.view.backgroundColor = SteelTeal
 
         errorLabel.alpha = 0;
+        
     }
     
 
@@ -61,6 +67,18 @@ class LoginViewController: UIViewController {
      errorLabel.alpha = 1
     }
 
+    
+    @IBAction func showpass(_ sender: UIButton) {
+        if sender.isSelected {
+            sender.isSelected = false
+            password.isSecureTextEntry = true
+        }
+        else {
+            sender.isSelected = true
+            password.isSecureTextEntry = false
+            
+        }
+    }
     
     
     @IBAction func DebugTapped(_ sender: Any) {

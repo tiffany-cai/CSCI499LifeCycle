@@ -65,7 +65,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ROL-gf-ZkE">
                                 <rect key="frame" x="147" y="333" width="207" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSU-rH-eSC">
                                 <rect key="frame" x="293" y="412" width="61" height="34"/>
@@ -111,6 +111,15 @@
                                     <action selector="DebugTapped:" destination="mjD-e8-KIc" eventType="touchUpInside" id="C5p-LX-bo3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNL-zP-m3S">
+                                <rect key="frame" x="314" y="337" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="closeye"/>
+                                <state key="selected" image="openeye"/>
+                                <connections>
+                                    <action selector="showpass:" destination="mjD-e8-KIc" eventType="touchUpInside" id="mXs-3u-ahO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -142,6 +151,7 @@
                     <connections>
                         <outlet property="errorLabel" destination="ynU-DD-74k" id="4C3-cT-e8D"/>
                         <outlet property="password" destination="ROL-gf-ZkE" id="E5c-iQ-OVE"/>
+                        <outlet property="showpass" destination="MNL-zP-m3S" id="4bE-lI-XZJ"/>
                         <outlet property="username" destination="HLU-sG-MA9" id="f0m-KL-08P"/>
                     </connections>
                 </viewController>
@@ -1078,10 +1088,12 @@
         <image name="arrow.up" catalog="system" width="60" height="64"/>
         <image name="bell" catalog="system" width="64" height="62"/>
         <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="closeye" width="242" height="209"/>
         <image name="doc.text" catalog="system" width="56" height="64"/>
         <image name="gear" catalog="system" width="64" height="58"/>
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="openeye" width="225" height="225"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="questionmark.circle" catalog="system" width="64" height="60"/>

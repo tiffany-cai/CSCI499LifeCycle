@@ -14,6 +14,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Change BG Color
+        self.view.backgroundColor = White
+        self.navigationController?.navigationBar.barTintColor = SteelTeal
         
         
         //ref to db

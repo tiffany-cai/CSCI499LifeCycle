@@ -19,14 +19,37 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var house: UIButton!
     @IBOutlet weak var vehicle: UIButton!
     
+    @IBOutlet weak var inputTextField: UITextField!
+    private var datePicker: UIDatePicker?
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.navigationController?.navigationBar.barTintColor = SteelTeal
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        inputTextField.inputView = datePicker
+        
+        
+         //self.navigationController?.navigationBar.barTintColor = SteelTeal
         //self.view.backgroundColor = White
         
 
         ref = Database.database().reference()
        
+    }
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm a"
+        inputTextField.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
     }
     @IBAction func house(_ sender: UIButton) {
         if sender.isSelected {
@@ -77,8 +100,8 @@ class ComposeViewController: UIViewController {
          // Get user ID
          let userID = Auth.auth().currentUser!.uid
          // post to firebase
-         ref?.child("users").child(userID).child("items").childByAutoId().setValue(itemName.text)
-         
+        ref?.child("users").child(userID).child("items").childByAutoId().setValue(itemName.text)
+        
          // dismiss popover
          presentingViewController?.dismiss(animated: true, completion: nil)
          

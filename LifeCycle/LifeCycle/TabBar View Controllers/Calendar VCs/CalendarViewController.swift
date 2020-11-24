@@ -126,9 +126,9 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
     // this places a dot on date with an event
     func calendar(_ calendar:FSCalendar, numberOfEventsFor date: Date) -> Int {
            formatter.dateFormat = "dd-MM-yyyy"
-             guard let eventDate = formatter.date(from: "25-11-2020") else { return  0}
+             guard let eventDate = formatter.date(from: "28-11-2020") else { return  0}
         if date.compare(eventDate) == .orderedSame {
-            return 2
+            return 1
         }
         return 0
     }
@@ -138,8 +138,15 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
     // this marks the delegate select
     func calendar( _ calendar: FSCalendar,didSelect date:Date,at atMonthPosition:FSCalendarMonthPosition){
             formatter.dateFormat = "dd-MM-yyyy"
-            print("Selected Date ==\(formatter.string(from:date))")
-    
+            //print("Selected Date ==\(formatter.string(from:date))")
+            let formattedDate = formatter.string(from: date)
+            let myAlert = UIAlertController (title: "Tasks Due", message: formattedDate, preferredStyle: .alert)
+            let dismiss = UIAlertAction(title: "Dismiss", style: .cancel)
+            let update = UIAlertAction(title: "Update", style: .destructive)
+            myAlert.addAction(dismiss)
+            myAlert.addAction(update)
+
+            present(myAlert, animated: true )
         }
     // this marks the delegate deselect
     func calendar( _ calendar: FSCalendar,didDeselect date:Date,at atMonthPosition:FSCalendarMonthPosition){

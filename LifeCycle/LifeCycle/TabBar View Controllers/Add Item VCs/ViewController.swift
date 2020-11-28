@@ -39,7 +39,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         // should be item instead of string
         let post = snapshot.value as? String
-        
+
+
         /*
         print("\n POST \n")
         print(post)

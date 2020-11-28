@@ -100,8 +100,11 @@ class ComposeViewController: UIViewController {
          // Get user ID
          let userID = Auth.auth().currentUser!.uid
          // post to firebase
+    
+        //let combine = [ "item": itemName.text, "cleaning" : inputTextField.text]
         ref?.child("users").child(userID).child("items").childByAutoId().setValue(itemName.text)
-        
+        ref?.child("users").child(userID).child("items").childByAutoId().setValue(inputTextField.text)
+            
          // dismiss popover
          presentingViewController?.dismiss(animated: true, completion: nil)
          

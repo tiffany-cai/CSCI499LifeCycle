@@ -74,6 +74,21 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func addPost(_ sender: Any) {
+        let name = itemName.text as! NSString
+        let date = inputTextField.text as! NSString
+        
+        print(name) // test
+        print(date) // 11/30/2020 11:59 PM
+        
+        let item : [String : AnyObject] = [
+            "name" : name,
+            "date" : date
+        ]
+        
+        ref?.child("items").childByAutoId().setValue(item)
+        
+        
+        
         /* Test to add item objects
         // Get user ID
         let userID = Auth.auth().currentUser!.uid
@@ -97,6 +112,7 @@ class ComposeViewController: UIViewController {
         
         
         /*Old Code for String objects DO NOT DELETE*/
+        /*
          // Get user ID
          let userID = Auth.auth().currentUser!.uid
          // post to firebase
@@ -104,9 +120,9 @@ class ComposeViewController: UIViewController {
         
          // dismiss popover
          presentingViewController?.dismiss(animated: true, completion: nil)
-         
+         */
         // dismiss popover
-        //presentingViewController?.dismiss(animated: true, completion: nil)
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelPost(_ sender: Any) {

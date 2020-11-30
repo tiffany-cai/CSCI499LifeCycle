@@ -16,6 +16,13 @@ struct ItemStruct {
     let date : String
 }
 
+class itemCell: UITableViewCell {
+    @IBOutlet var name : UILabel?
+    @IBOutlet var date : UILabel?
+    
+    
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var ref : DatabaseReference?
@@ -37,8 +44,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // Get ref to db
         ref = Database.database().reference()
-        //ref?.child("items").queryOrderedByKey().observeSingleEvent(of: .childAdded, with: { (DataSnapshot) in
-            
         ref?.child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
         
             let dict = snapshot.value as! [String: Any]
@@ -49,73 +54,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
         })
     }
-        
-        //(of: .childAdded, with: { (snap) in
-            
-          //  print(snap)
-            //let name = snap.value("name") as! String
-            //let date = snap.value("date") as! String
-            
-            //self.items.append(ItemStruct(name:name, date:date))
-            //self.tableView.reloadData()
-        //})
-        
-        
-        
-        
-        /*
-        // Get ref to db
-        ref = Database.database().reference()
-        // Get user ID
-        let userID = Auth.auth().currentUser!.uid
-
-       //.value looks to added and removed and changed items
-        databaseHandle = ref?.child("users").child(userID).child("items").observe(.childAdded, with: { (snapshot ) in
-            
-        // should be item instead of string
-        let post = snapshot.value as? String
-
-
-        /*
-        print("\n POST \n")
-        print(post)
-        print("\n Snap \n")
-        print(snapshot)
-        print("\n Snap Value \n")
-        print(snapshot.value)
- */
-        
-        if let actualPost = post {
-            self.postData.append(actualPost)
-            self.tableView.reloadData()
-            }
-        })
-        // end of database handle */
     
     //MARK: tableview data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return postData.count
-        
         return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! itemCell
         
-        let label1 = cell?.viewWithTag(1) as! UILabel
-        label1.text = items[indexPath.row].name
+        // Fetch the data for the row.
+        let theItems = items[indexPath.row]
         
-        let label2 = cell?.viewWithTag(2) as! UILabel
-        label2.text = items[indexPath.row].date
+        // Configure the cell’s contents with data from the fetched object.
+        cell.name?.text = theItems.name
+        cell.date?.text = theItems.date
         
-        return cell!
-        
-        
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
-        //cell?.textLabel?.text = postData[indexPath.row]
-        //return cell!
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView,
+               heightForRowAt indexPath: IndexPath) -> CGFloat {
+          return 70
     }
     
     //MARK: notifications

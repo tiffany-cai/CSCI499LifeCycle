@@ -54,7 +54,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
         })
     }
-        
     
     //MARK: tableview data source
     
@@ -73,13 +72,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.name?.text = theItems.name
         cell.date?.text = theItems.date
         
-        /*
-        let label1 = cell?.viewWithTag(1) as! UILabel
-        label1.text = items[indexPath.row].name
-        
-        let label2 = cell?.viewWithTag(2) as! UILabel
-        label2.text = items[indexPath.row].date
-        */
         return cell
     }
     

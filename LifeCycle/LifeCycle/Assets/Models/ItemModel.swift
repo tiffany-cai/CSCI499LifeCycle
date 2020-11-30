@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 class ItemModel {
     var name : String
     var date : String
@@ -17,3 +17,4 @@ class ItemModel {
         self.date = "12-31-2020"
     }
 }
+*/

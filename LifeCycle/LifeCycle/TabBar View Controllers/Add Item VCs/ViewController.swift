@@ -10,12 +10,19 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
+
+struct ItemStruct {
+    let name : String
+    let date : String
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var ref : DatabaseReference?
     var databaseHandle : DatabaseHandle?
     // Has to be an array of items
-    var postData = [String]()
+    //var postData = [String]()
+    var items = [ItemStruct]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,17 +32,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         self.view.backgroundColor = White
         
-
+        //notification()
         
-        notification()
         
+        // Get ref to db
+        ref = Database.database().reference()
+        //ref?.child("items").queryOrderedByKey().observeSingleEvent(of: .childAdded, with: { (DataSnapshot) in
+            
+        ref?.child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
+        
+            let dict = snapshot.value as! [String: Any]
+            let name = dict["name"] as! String
+            let date = dict["date"] as! String
+            
+            self.items.append(ItemStruct(name:name, date:date))
+            self.tableView.reloadData()
+        })
+    }
+        
+        //(of: .childAdded, with: { (snap) in
+            
+          //  print(snap)
+            //let name = snap.value("name") as! String
+            //let date = snap.value("date") as! String
+            
+            //self.items.append(ItemStruct(name:name, date:date))
+            //self.tableView.reloadData()
+        //})
+        
+        
+        
+        
+        /*
         // Get ref to db
         ref = Database.database().reference()
         // Get user ID
         let userID = Auth.auth().currentUser!.uid
 
        //.value looks to added and removed and changed items
-    databaseHandle = ref?.child("users").child(userID).child("items").observe(.childAdded, with: { (snapshot ) in
+        databaseHandle = ref?.child("users").child(userID).child("items").observe(.childAdded, with: { (snapshot ) in
             
         // should be item instead of string
         let post = snapshot.value as? String
@@ -55,20 +90,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.tableView.reloadData()
             }
         })
-    }
+        // end of database handle */
     
     //MARK: tableview data source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postData.count
+        //return postData.count
+        
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
         
-        cell?.textLabel?.text = postData[indexPath.row]
+        let label1 = cell?.viewWithTag(1) as! UILabel
+        label1.text = items[indexPath.row].name
+        
+        let label2 = cell?.viewWithTag(2) as! UILabel
+        label2.text = items[indexPath.row].date
         
         return cell!
+        
+        
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell")
+        //cell?.textLabel?.text = postData[indexPath.row]
+        //return cell!
     }
     
     //MARK: notifications

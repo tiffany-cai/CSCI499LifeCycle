@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
         
-        Auth.auth().signIn(withEmail: "test@test.com", password: "LifeCycle")
+        Auth.auth().signIn(withEmail: "test@testing.com", password: "LifeCycle")
         
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
     }

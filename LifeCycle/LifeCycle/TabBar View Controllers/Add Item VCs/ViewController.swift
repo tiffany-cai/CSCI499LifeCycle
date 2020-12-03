@@ -27,18 +27,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var ref : DatabaseReference?
     var databaseHandle : DatabaseHandle?
-    // Has to be an array of items
-    //var postData = [String]()
     var items = [ItemStruct]()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var NavBar: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Get ref to db
+        ref = Database.database().reference()
+        
         tableView.delegate = self
         tableView.dataSource = self
-        self.view.backgroundColor = White
+        NavBar.title = "Welcome"
+        //self.view.backgroundColor = White
         
+
+        notification()
+        
+        
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        ref?.child("users").child(userID).child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
+
         // Get ref to db
         ref = Database.database().reference()
         ref?.child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
@@ -50,7 +61,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.items.append(ItemStruct(name:name, date:date))
             self.tableView.reloadData()
         })
-    }
+        
+    } // End of view did load
     
     //MARK: tableview data source
     
@@ -74,7 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView,
                heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return 70
+          return 85
     }
 
 }

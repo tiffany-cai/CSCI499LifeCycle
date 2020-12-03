@@ -9,6 +9,8 @@ import FirebaseFirestore
 import UIKit
 import Firebase
 
+var ref : DatabaseReference?
+
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var fname : UITextField!
@@ -20,6 +22,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.navigationController?.navigationBar.barTintColor = MorningBlue
         self.view.backgroundColor = MorningBlue
@@ -51,6 +54,23 @@ class RegisterViewController: UIViewController {
                 guard let userID = Auth.auth().currentUser?.uid else { return }
                 
                 //add fname, lname to db
+                // USING REALTIME DB
+                ref = Database.database().reference()
+                
+                ref?.child("users").child(userID).setValue([
+                    "Fname": Fname,
+                    "Lname": Lname]){
+                      (error:Error?, ref:DatabaseReference) in
+                      if let error = error {
+                        print("Data could not be saved: \(error).")
+                      } else {
+                        print("Data saved successfully!")
+                      }
+                    }
+                
+                
+                
+/* USING FIRESTORE
                 let db = Firestore.firestore()
                 
                 db.collection("users").document(userID).setData([
@@ -63,6 +83,7 @@ class RegisterViewController: UIViewController {
                         print("Document successfully written!")
                     }
                 }
+ */
                 // Go to home page
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
             }

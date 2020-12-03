@@ -85,8 +85,9 @@ class ComposeViewController: UIViewController {
             "date" : date
         ]
         
-        ref?.child("items").childByAutoId().setValue(item)
-        
+        //ref?.child("items").childByAutoId().setValue(item)
+       guard let userID = Auth.auth().currentUser?.uid else { return }
+        ref?.child("users").child(userID).child("items").childByAutoId().setValue(item)
         
         
         /* Test to add item objects

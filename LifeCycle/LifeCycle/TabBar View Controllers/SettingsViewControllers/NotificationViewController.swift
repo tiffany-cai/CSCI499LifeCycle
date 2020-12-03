@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class NotificationViewController: UIViewController {
     @IBOutlet weak var quarter: UIButton!
     @IBOutlet weak var half: UIButton!
     @IBOutlet weak var full: UIButton!
     @IBOutlet weak var none: UIButton!
+    @IBOutlet weak var SuccessLbl: UILabel!
     
     /*
      
@@ -30,7 +33,8 @@ class NotificationViewController: UIViewController {
         
         // Set BG
         self.view.backgroundColor = UIColor.AppColors.AshGrey
-        
+        // hide success lbl
+        SuccessLbl.alpha = 0;
     }
     
     @IBAction func quarterAction(_ sender: UIButton) {
@@ -93,34 +97,37 @@ class NotificationViewController: UIViewController {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        // Get ref to db
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        // change Snooze variable in db
+        if (quarter.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 15])
+            showSuccessLbl("Snooze time set to 15 mins")
+        }
+        if (half.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 30])
+            showSuccessLbl("Snooze time set to 30 mins")
+        }
+        if (full.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 60])
+            showSuccessLbl("Snooze time set to 1 hour")
+        }
+        if (none.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 0])
+            showSuccessLbl("Snooze time turned off")
+        }
+        
+        
+        // return to tab bar
+        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let SettingsVC = storyboard.instantiateViewController(identifier: "SettingsViewController")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(SettingsVC)
+ */
     }
     
-    @IBAction func BackBtn(_ sender: Any) {
-        print("tapped")
-        
-             //(UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
-        
-        // Return to Setting Page
-       
-        
-        //tabBarController.selectedIndex = 3
-        //let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-        //(UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //let settingsVC = storyboard.instantiateViewController(withIdentifier: "SettingsViewController")
-        
-        
-        //let tabBarController = UITabBarController()
-        //tabBarController.viewControllers = [settingsVC]
-        
-
-        
-        
+    func showSuccessLbl(_ message:String){
+     SuccessLbl.text = message
+     SuccessLbl.alpha = 1
     }
-
 }

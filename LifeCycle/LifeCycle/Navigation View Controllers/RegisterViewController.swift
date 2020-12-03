@@ -59,7 +59,10 @@ class RegisterViewController: UIViewController {
                 
                 ref?.child("users").child(userID).setValue([
                     "Fname": Fname,
-                    "Lname": Lname]){
+                    "Lname": Lname,
+                    "Email": Email,
+                    "Snooze": 15
+                ]){
                       (error:Error?, ref:DatabaseReference) in
                       if let error = error {
                         print("Data could not be saved: \(error).")
@@ -68,22 +71,6 @@ class RegisterViewController: UIViewController {
                       }
                     }
                 
-                
-                
-/* USING FIRESTORE
-                let db = Firestore.firestore()
-                
-                db.collection("users").document(userID).setData([
-                    "Fname": Fname,
-                    "Lname": Lname,
-                ]) { err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("Document successfully written!")
-                    }
-                }
- */
                 // Go to home page
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
             }

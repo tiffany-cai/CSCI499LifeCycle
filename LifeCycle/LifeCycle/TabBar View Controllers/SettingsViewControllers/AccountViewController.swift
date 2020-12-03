@@ -31,6 +31,8 @@ class AccountViewController: UIViewController {
     @IBAction func ChangeEMbtn(_ sender: Any) {
         let userEmail = Auth.auth().currentUser?.email
         
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
         // Check if current email matches email on DB
         // Check if New Email text field isnt empty
         if CurEM.text == userEmail! && NewEM.text != nil {
@@ -40,7 +42,7 @@ class AccountViewController: UIViewController {
                 }
                 else {
                     // Change Email variable in the realtime DB
-                    
+                    ref?.child("users").child(userID).updateChildValues(["Email" : self.NewEM.text!])
                     
                     // reset text fields
                     self.CurEM.text = ""

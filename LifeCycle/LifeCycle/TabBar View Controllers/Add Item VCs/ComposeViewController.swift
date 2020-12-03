@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import UserNotifications
 
 
 class ComposeViewController: UIViewController {
@@ -18,11 +19,14 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var itemName: UITextField!
     @IBOutlet weak var house: UIButton!
     @IBOutlet weak var vehicle: UIButton!
-    
     @IBOutlet weak var inputTextField: UITextField!
     private var datePicker: UIDatePicker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        notification()
+        
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .dateAndTime
         datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
@@ -32,11 +36,6 @@ class ComposeViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         
         inputTextField.inputView = datePicker
-        
-        
-         //self.navigationController?.navigationBar.barTintColor = SteelTeal
-        //self.view.backgroundColor = White
-        
 
         ref = Database.database().reference()
        
@@ -51,6 +50,7 @@ class ComposeViewController: UIViewController {
         inputTextField.text = dateFormatter.string(from: datePicker.date)
         view.endEditing(true)
     }
+    
     @IBAction func house(_ sender: UIButton) {
         if sender.isSelected {
             sender.isSelected = false
@@ -74,8 +74,8 @@ class ComposeViewController: UIViewController {
     }
     
     @IBAction func addPost(_ sender: Any) {
-        let name = itemName.text as! NSString
-        let date = inputTextField.text as! NSString
+        let name = itemName.text! as NSString
+        let date = inputTextField.text! as NSString
         
         print(name) // test
         print(date) // 11/30/2020 11:59 PM
@@ -88,7 +88,6 @@ class ComposeViewController: UIViewController {
         //ref?.child("items").childByAutoId().setValue(item)
        guard let userID = Auth.auth().currentUser?.uid else { return }
         ref?.child("users").child(userID).child("items").childByAutoId().setValue(item)
-        
         
         /* Test to add item objects
         // Get user ID
@@ -126,6 +125,11 @@ class ComposeViewController: UIViewController {
          presentingViewController?.dismiss(animated: true, completion: nil)
          */
         // dismiss popover
+        
+        let Ndate = datePicker!.date
+        //let itemN = Text(itemName)
+        scheduleNotification(itemName: name as String, alarmTime: Ndate)
+        
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
@@ -134,5 +138,46 @@ class ComposeViewController: UIViewController {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    
+    //MARK: notifications
+    
+    //notification pops up asking for permission
+    func notification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
+            if success {
+                print("User granted notifs!")
+            }
+            else if error != nil {
+                print("error, user did not grant notif")
+            }
+        })
+    }
+    
+    //scheduling the notif
+    func scheduleNotification(itemName: String, alarmTime: Date) {
+        
+        let content = UNMutableNotificationContent()
+        
+        //this is what you want each part of the notification to say
+        content.title = itemName
+        content.body = "This item may need maintainence soon."
+        content.sound = .default
+
+        //this is what takes the date and schedules the notif
+        
+        let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: alarmTime), repeats: false)
+        
+        //testing notifs with 30 seconds
+        /*let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date().addingTimeInterval(30)), repeats: false)*/
+        
+        //to help accesss specific notifications upon deletion, throws in time notification is to be done to differenciate between one another
+        let request = UNNotificationRequest(identifier: "notif \(String(describing: itemName))", content: content, trigger: schedule)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+            if error != nil {
+                print("error")
+            }
+        })
+    }
 
 }

@@ -43,11 +43,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NavBar.title = "Welcome"
         //self.view.backgroundColor = White
         
+
         notification()
         
         
         guard let userID = Auth.auth().currentUser?.uid else { return }
         ref?.child("users").child(userID).child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
+
+        // Get ref to db
+        ref = Database.database().reference()
+        ref?.child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
         
             let dict = snapshot.value as! [String: Any]
             let name = dict["name"] as! String
@@ -82,42 +87,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView,
                heightForRowAt indexPath: IndexPath) -> CGFloat {
           return 85
-    }
-    
-    //MARK: notifications
-    
-    //notification pops up asking for permission
-    func notification() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {success, error in
-            if success {
-                print("User granted notifs!")
-            }
-            else if error != nil {
-                print("error, user did not grant notif")
-            }
-        })
-    }
-    
-    func scheduleNotification(itemName: String, alarmTime: Date) {
-        
-        let content = UNMutableNotificationContent()
-        
-        //this is what you want each part of the notification to say
-        content.title = itemName
-        content.body = "This item may need maintainence soon."
-        content.sound = .default
-
-        //this is what takes the date and schedules the notif
-        let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: alarmTime), repeats: false)
-        
-        //to help accesss specific notifications upon deletion, throws in time notification is to be done to differenciate between one another
-        let request = UNNotificationRequest(identifier: "notif \(String(describing: itemName))", content: content, trigger: schedule)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-            if error != nil {
-                print("error")
-            }
-        })
     }
 
 }

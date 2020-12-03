@@ -39,9 +39,14 @@ class AccountViewController: UIViewController {
                     self.showEmError("\(error.localizedDescription)")
                 }
                 else {
+                    // Change Email variable in the realtime DB
+                    
+                    
+                    // reset text fields
                     self.CurEM.text = ""
                     self.NewEM.text = ""
                 
+                    // show success label
                     self.EmErrLbl.text = "Success"
                     self.EmErrLbl.backgroundColor = UIColor.green
                     self.EmErrLbl.alpha = 1

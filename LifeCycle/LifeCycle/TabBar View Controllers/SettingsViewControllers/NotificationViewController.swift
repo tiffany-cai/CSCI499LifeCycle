@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class NotificationViewController: UIViewController {
     @IBOutlet weak var quarter: UIButton!
@@ -93,9 +95,29 @@ class NotificationViewController: UIViewController {
     }
     
     @IBAction func confirmBtn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        // Get ref to db
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        // change Snooze variable in db
+        if (quarter.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 15])
+        }
+        if (half.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 30])
+        }
+        if (full.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 60])
+        }
+        if (none.isSelected == true){
+            ref?.child("users").child(userID).updateChildValues(["Snooze" : 0])
+        }
+        
+        
+        // return to tab bar
+        /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let SettingsVC = storyboard.instantiateViewController(identifier: "SettingsViewController")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(SettingsVC)
+ */
     }
     
     @IBAction func BackBtn(_ sender: Any) {

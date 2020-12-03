@@ -43,16 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         NavBar.title = "Welcome"
         //self.view.backgroundColor = White
         
-
-        notification()
-        
-        
         guard let userID = Auth.auth().currentUser?.uid else { return }
         ref?.child("users").child(userID).child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
-
-        // Get ref to db
-        ref = Database.database().reference()
-        ref?.child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
         
             let dict = snapshot.value as! [String: Any]
             let name = dict["name"] as! String

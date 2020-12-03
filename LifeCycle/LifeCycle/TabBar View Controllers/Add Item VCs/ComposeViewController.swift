@@ -156,43 +156,65 @@ class ComposeViewController: UIViewController {
     //scheduling the notif
     func scheduleNotification(itemName: String, alarmTime: Date) {
         
-        let content = UNMutableNotificationContent()
+        ref = Database.database().reference()
+        guard let userID = Auth.auth().currentUser?.uid else { return }
         
-        //this is what you want each part of the notification to say
-        content.title = itemName
-        content.body = "This item may need maintainence soon."
-        content.sound = .default
-        
-        let content2 = UNMutableNotificationContent()
-        
-        //this is what you want each part of the notification to say
-        content2.title = itemName
-        content2.body = "Reminder."
-        content2.sound = .default
-
-        //this is what takes the date and schedules the notif
-        
-        let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: alarmTime), repeats: false)
-        
-        let schedule2 = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: alarmTime.addingTimeInterval(30)), repeats: false)
-        
-        //testing notifs with 30 seconds
-        /*let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date().addingTimeInterval(30)), repeats: false)*/
-        
-        //to help accesss specific notifications upon deletion, throws in time notification is to be done to differenciate between one another
-        let request = UNNotificationRequest(identifier: "notif \(String(describing: itemName))", content: content, trigger: schedule)
-        let request2 = UNNotificationRequest(identifier: "reminder \(String(describing: itemName))", content: content2, trigger: schedule2)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-            if error != nil {
-                print("error")
+        ref?.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get user value
+          let value = snapshot.value as? NSDictionary
+        let snoozeTime = value?["Snooze"] as! Double
+            
+            print("Snooze Time is set to: ")
+            print(snoozeTime)
+          
+            // first reminder
+                let content = UNMutableNotificationContent()
+                //this is what you want each part of the notification to say
+                content.title = itemName
+                content.body = "This item may need maintainence soon."
+                content.sound = .default
+                let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: alarmTime), repeats: false)
+                let request = UNNotificationRequest(identifier: "notif \(String(describing: itemName))", content: content, trigger: schedule)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+                    if error != nil {
+                        print("error")
+                    }
+                })
+            
+            
+            if (snoozeTime == 0){
+             // do not send 2nd reminder
+                // do nothing
+                print("snoozetime is set to 0, second notification not created")
+            }else {
+                print("snoozetime is not set to 0")
+             // send 2nd reminder
+                let content2 = UNMutableNotificationContent()
+                
+                //this is what you want each part of the notification to say
+                content2.title = itemName
+                content2.body = "Reminder"
+                content2.sound = .default
+                let schedule2 = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: alarmTime.addingTimeInterval(snoozeTime)), repeats: false)
+                
+                // DO NOT DELETE
+                //snoozeTime * 60.0
+                //print("Second notification created in Seconds: ")
+                //print(snoozeTime * 60.0)
+                
+                let request2 = UNNotificationRequest(identifier: "reminder \(String(describing: itemName))", content: content2, trigger: schedule2)
+                UNUserNotificationCenter.current().add(request2, withCompletionHandler: {error in
+                    if error != nil {
+                        print("error")
+                    }
+                })
+                
+            } // end else
+            
+            }) { (error) in
+                print(error.localizedDescription)
             }
-        })
-        UNUserNotificationCenter.current().add(request2, withCompletionHandler: {error in
-            if error != nil {
-                print("error")
-            }
-        })
+            
     }
 
 }

@@ -22,6 +22,9 @@
  var OpalBlue = UIColor.init(Hex: 0xBDDBD0)
  var SteelTeal = UIColor.init(Hex: 0x7A918D)
  var MorningBlue = UIColor.init(Hex: 0x93B1A7)
+ 
+ var Blackish = UIColor.init(Hex: 0x393e46)
+
 
  /*Allows usage of hex colors by properly formatting and creating an extension of UIColor*/
  extension UIColor {

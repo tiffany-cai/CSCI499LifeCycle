@@ -162,18 +162,33 @@ class ComposeViewController: UIViewController {
         content.title = itemName
         content.body = "This item may need maintainence soon."
         content.sound = .default
+        
+        let content2 = UNMutableNotificationContent()
+        
+        //this is what you want each part of the notification to say
+        content2.title = itemName
+        content2.body = "Reminder."
+        content2.sound = .default
 
         //this is what takes the date and schedules the notif
         
-        let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: alarmTime), repeats: false)
+        let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: alarmTime), repeats: false)
+        
+        let schedule2 = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.month, .day, .year, .hour, .minute], from: alarmTime.addingTimeInterval(30)), repeats: false)
         
         //testing notifs with 30 seconds
         /*let schedule = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date().addingTimeInterval(30)), repeats: false)*/
         
         //to help accesss specific notifications upon deletion, throws in time notification is to be done to differenciate between one another
         let request = UNNotificationRequest(identifier: "notif \(String(describing: itemName))", content: content, trigger: schedule)
+        let request2 = UNNotificationRequest(identifier: "reminder \(String(describing: itemName))", content: content2, trigger: schedule2)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
+            if error != nil {
+                print("error")
+            }
+        })
+        UNUserNotificationCenter.current().add(request2, withCompletionHandler: {error in
             if error != nil {
                 print("error")
             }

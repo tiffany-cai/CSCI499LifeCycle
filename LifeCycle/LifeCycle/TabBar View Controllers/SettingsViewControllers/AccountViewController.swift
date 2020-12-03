@@ -21,7 +21,7 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set BG
-        self.view.backgroundColor = UIColor.AppColors.AshGrey
+        //self.view.backgroundColor = UIColor.AppColors.AshGrey
         // Config Error Labels
         EmErrLbl.alpha = 0;
         PassErrLbl.alpha = 0;

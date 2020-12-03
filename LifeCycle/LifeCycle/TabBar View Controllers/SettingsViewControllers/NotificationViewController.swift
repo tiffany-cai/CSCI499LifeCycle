@@ -32,7 +32,7 @@ class NotificationViewController: UIViewController {
         super.viewDidLoad()
         
         // Set BG
-        self.view.backgroundColor = UIColor.AppColors.AshGrey
+        //self.view.backgroundColor = UIColor.AppColors.AshGrey
         // hide success lbl
         SuccessLbl.alpha = 0;
     }

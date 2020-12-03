@@ -14,7 +14,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         // Change BG Color
         self.view.backgroundColor = White
-        self.navigationController?.navigationBar.barTintColor = SteelTeal
+        //self.navigationController?.navigationBar.barTintColor = Blackish
         
     }
 

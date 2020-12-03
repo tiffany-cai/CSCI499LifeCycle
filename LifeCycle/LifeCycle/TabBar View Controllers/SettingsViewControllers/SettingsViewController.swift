@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         // Set BG
-        self.view.backgroundColor = UIColor.AppColors.AshGrey
+        //self.view.backgroundColor = UIColor.AppColors.AshGrey
         // Set Nav Bar Color
         
         

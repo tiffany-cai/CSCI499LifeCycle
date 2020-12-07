@@ -45,7 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         guard let userID = Auth.auth().currentUser?.uid else { return }
         ref?.child("users").child(userID).child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in
-        
             let dict = snapshot.value as! [String: Any]
             let name = dict["name"] as! String
             let date = dict["date"] as! String
@@ -79,6 +78,91 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView,
                heightForRowAt indexPath: IndexPath) -> CGFloat {
           return 85
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        print("swiped")
+        let delete = deleteAction(at: indexPath)
+        
+        // Add delete func to table view when you swipe from left to right
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    // deletes from table view
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Delete") {(action,view,completion) in
+            
+            // remove from DB
+            let itemName = self.items[indexPath.row].name
+            print(itemName)
+            
+            let userID = Auth.auth().currentUser?.uid
+            self.ref?.child("users").child(userID!).child("items").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+              // Get user value
+                let value = snapshot.value as? NSDictionary
+                print(value)
+                
+                //let username = value?["username"] as? String ?? ""
+                //let user = User(username: username)\
+                
+                // get all keys in a users items list
+                /*for key in value!.allKeys{
+                    print(key)
+                    /*self.ref?.child("users").child(userID!).child("items").child("\(key)").observeSingleEvent(of: .value, with: { (snapshot2) in
+                            print(snapshot2)
+                    })*/
+                }
+                    
+                print(snapshot.hasChild(itemName))
+                    //self.ref?.child("users").child(userID!).child("items").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+                            
+                    //})
+                    
+                
+              // ...*/
+                
+              })
+                { (error) in
+                print(error.localizedDescription)
+            }
+            
+
+            
+            
+            
+            //itemRef.child(itemKey).setValue(nil)
+            
+            // remove from items array
+            self.items.remove(at: indexPath.row)
+            
+            // remove from UI Table View Controller
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            completion(true)
+            
+
+            //guard let userID = Auth.auth().currentUser?.uid else { return }
+            //self.removeObjectFromFireBase(userKey: userID, name: itemName)
+
+        }
+        action.image = UIImage(systemName: "trash")
+        action.backgroundColor = .red
+        
+        return action
+    }
+    
+    // deletes from firebase
+    func removeObjectFromFireBase(userKey: String, name: String) {
+        let itemRef = Database.database().reference().child("users").child(userKey).child("items")
+        
+        print(name)
+        
+        itemRef.queryOrderedByValue().queryEqual(toValue: name).observeSingleEvent(of: .value) { (DataSnapshot) in
+            for child in DataSnapshot.children{
+                print((child as! DataSnapshot).key)
+            }
+        }
+        
+        //itemRef.child(itemKey).setValue(nil)
     }
 
 }

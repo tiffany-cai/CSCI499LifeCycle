@@ -97,40 +97,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print(itemName)
             
             let userID = Auth.auth().currentUser?.uid
-            self.ref?.child("users").child(userID!).child("items").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+            let itemRef = self.ref?.child("users").child(userID!).child("items")
+            itemRef?.queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
               // Get user value
-                let value = snapshot.value as? NSDictionary
-                print(value)
-                
-                //let username = value?["username"] as? String ?? ""
-                //let user = User(username: username)\
-                
-                // get all keys in a users items list
-                /*for key in value!.allKeys{
-                    print(key)
-                    /*self.ref?.child("users").child(userID!).child("items").child("\(key)").observeSingleEvent(of: .value, with: { (snapshot2) in
-                            print(snapshot2)
-                    })*/
+                //let value = snapshot.value as? NSDictionary
+                let value = snapshot.value as? [String: Any]
+                var keyItemPair = [String:String]()
+                for v in value!{
+                    //print(v.key)
+                    let dict = v.value as! [String: Any]
+                    let name = dict["name"] as! String
+                    //print(name)
+                    keyItemPair["\(v.key)"] = name
                 }
-                    
-                print(snapshot.hasChild(itemName))
-                    //self.ref?.child("users").child(userID!).child("items").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
-                            
-                    //})
-                    
-                
-              // ...*/
-                
+                for x in keyItemPair{
+                    if (x.value == itemName){
+                        //print(x.key)
+                        itemRef?.child(x.key).setValue(nil)
+                    }
+                }
               })
                 { (error) in
                 print(error.localizedDescription)
             }
-            
-
-            
-            
-            
-            //itemRef.child(itemKey).setValue(nil)
             
             // remove from items array
             self.items.remove(at: indexPath.row)

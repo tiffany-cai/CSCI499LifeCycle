@@ -26,21 +26,6 @@ class calItems {
 
 class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDataSource, FSCalendarDelegate, FSCalendarDataSource,FSCalendarDelegateAppearance  {
     
-    
-//
-    /*
-     as a user I want to ...
-     - delete items
-     - see details (Start Date/End Date)
-     - edit item (Start Date)
-     - See items and its details
-     
-     
-    User struct
-     -- pull start dates and item IDs from here
-     
-     */
-    
     @IBOutlet weak var CalList: UITableView!
 
     var calItemArray = [calItems]()

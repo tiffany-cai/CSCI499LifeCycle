@@ -46,6 +46,9 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var calItemArray = [calItems]()
     var calendar:FSCalendar!
     var formatter = DateFormatter()
+    
+    
+    fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,15 +150,24 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return Date().addingTimeInterval((24*60*60)*3666);
     }
     // this places a dot on date with an event
-    func calendar(_ calendar:FSCalendar, numberOfEventsFor date: Date) -> Int {
+   /* func calendar(_ calendar:FSCalendar, numberOfEventsFor date: Date) -> Int {
            formatter.dateFormat = "dd-MM-yyyy"
              guard let eventDate = formatter.date(from: "28-11-2020") else { return  0}
         if date.compare(eventDate) == .orderedSame {
             return 1
         }
         return 0
-    }
+    }*/
 
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let day: Int! = self.gregorian.component(.day, from: date)
+        return day % 6 == 0 ? day/6 : 0;
+    }
+    
+    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+        let day: Int! = self.gregorian.component(.day, from: date)
+        return [13,24].contains(day) ? UIImage(named: "icon_cat") : nil
+    }
     
 
     // this marks the delegate select

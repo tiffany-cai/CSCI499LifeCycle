@@ -59,13 +59,14 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 18.0)
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 15.0)
         
-        calendar.appearance.todayColor = UIColor.AppColors.ArmyGreen
-        calendar.appearance.titleTodayColor = .white
-        calendar.appearance.titleDefaultColor = UIColor.AppColors.Opal
+        calendar.appearance.todayColor = MorningBlue
         
-        calendar.appearance.headerTitleColor = UIColor.AppColors.DarkOliveGreen
+        calendar.appearance.titleTodayColor = .white
+        calendar.appearance.titleDefaultColor = Black
+        
+        calendar.appearance.headerTitleColor = SteelTeal
         //calendar.appearance.headerTitleColor = .systemPink
-        calendar.appearance.weekdayTextColor = UIColor.AppColors.AshGrey
+        calendar.appearance.weekdayTextColor = SteelTeal
     
         //calendar.calendarHeaderView.collectionViewLayout =
         //calendar.appearance.headerTitleTextSize = 18.0

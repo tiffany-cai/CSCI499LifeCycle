@@ -84,17 +84,7 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         calendar.allowsMultipleSelection = false
         
         
-        let NemoHouse = calItems(cal_list: "Nemo's House", cal_info: "42 Wallaby Way, Sydney")
-        calItemArray.append(NemoHouse)
-        
-        let SimpsonHouse = calItems(cal_list: "Simpson's House", cal_info: "742 Evergreen Terrace")
-        calItemArray.append(SimpsonHouse)
 
-        let Apartment = calItems(cal_list: "My Apartment", cal_info: "stuytown")
-        calItemArray.append(Apartment)
-
-        let Car = calItems(cal_list: "Pearl", cal_info: "Lexus LFA")
-        calItemArray.append(Car)
         //end of delete
         
         
@@ -142,13 +132,13 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     // datasource
     // this marks the current date
-    func minimumDate(for calendar: FSCalendar) -> Date {
+   /* func minimumDate(for calendar: FSCalendar) -> Date {
         return Date()
-    }
+    }*/
     
-    func maximumDate(for calendar: FSCalendar) -> Date {
+   /* func maximumDate(for calendar: FSCalendar) -> Date {
         return Date().addingTimeInterval((24*60*60)*3666);
-    }
+    }*/
     // this places a dot on date with an event
    /* func calendar(_ calendar:FSCalendar, numberOfEventsFor date: Date) -> Int {
            formatter.dateFormat = "dd-MM-yyyy"
@@ -171,7 +161,7 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
 
     // this marks the delegate select
-    func calendar( _ calendar: FSCalendar,didSelect date:Date,at atMonthPosition:FSCalendarMonthPosition){
+   /* func calendar( _ calendar: FSCalendar,didSelect date:Date,at atMonthPosition:FSCalendarMonthPosition){
             formatter.dateFormat = "dd-MM-yyyy"
             //print("Selected Date ==\(formatter.string(from:date))")
             let formattedDate = formatter.string(from: date)
@@ -182,15 +172,15 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
             myAlert.addAction(update)
 
             present(myAlert, animated: true )
-        }
+        }*/
     // this marks the delegate deselect
-    func calendar( _ calendar: FSCalendar,didDeselect date:Date,at atMonthPosition:FSCalendarMonthPosition){
+   /* func calendar( _ calendar: FSCalendar,didDeselect date:Date,at atMonthPosition:FSCalendarMonthPosition){
             formatter.dateFormat = "dd-MM-yyyy"
             print("De-Selected Date ==\(formatter.string(from:date))")
     
-        }
+        }*/
 // exclede selected date
-    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at atMonthPosition: FSCalendarMonthPosition) -> Bool {
+  /*  func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at atMonthPosition: FSCalendarMonthPosition) -> Bool {
         formatter.dateFormat = "dd-MM-yyyy"
         guard let excludedDate = formatter.date(from: "24-10-2020") else { return  true}
         if date.compare(excludedDate) == .orderedSame {
@@ -198,16 +188,16 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         
         return  true
-    }
+    }*/
         
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+   /* func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
         formatter.dateFormat = "dd-MM-yyyy"
         guard let excludedDate = formatter.date(from: "06-11-2020") else { return nil}
         if date.compare(excludedDate) == .orderedSame {
             return .purple
             }
         return nil
-    }
+    }*/
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return calItemArray.count

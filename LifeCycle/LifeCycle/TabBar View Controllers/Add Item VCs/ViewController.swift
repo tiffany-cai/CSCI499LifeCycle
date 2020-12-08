@@ -14,6 +14,7 @@ import FirebaseDatabase
 struct ItemStruct {
     let name : String
     let date : String
+    let lifecycle : String
 }
 
 class itemCell: UITableViewCell {
@@ -48,8 +49,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let dict = snapshot.value as! [String: Any]
             let name = dict["name"] as! String
             let date = dict["date"] as! String
+            let life = dict["lifecycle"] as! String
             
-            self.items.append(ItemStruct(name:name, date:date))
+            self.items.append(ItemStruct(name:name, date:date, lifecycle: life))
             self.tableView.reloadData()
         })
         

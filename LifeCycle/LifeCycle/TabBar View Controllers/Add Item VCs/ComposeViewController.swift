@@ -76,13 +76,22 @@ class ComposeViewController: UIViewController {
     @IBAction func addPost(_ sender: Any) {
         let name = itemName.text! as NSString
         let date = inputTextField.text! as NSString
+        var life = "" as NSString
+        
+        if date == "" {
+            life = "seed"
+        }else{
+            life = "plant"
+        }
         
         print(name) // test
         print(date) // 11/30/2020 11:59 PM
+        print(life)
         
         let item : [String : AnyObject] = [
             "name" : name,
-            "date" : date
+            "date" : date,
+            "lifecycle" : life
         ]
         
         //ref?.child("items").childByAutoId().setValue(item)

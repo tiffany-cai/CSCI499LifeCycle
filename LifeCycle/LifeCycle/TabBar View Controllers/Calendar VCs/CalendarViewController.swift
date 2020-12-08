@@ -10,7 +10,8 @@
 
 import UIKit
 import FSCalendar
-
+import FirebaseAuth
+import FirebaseDatabase
 
 
 class calItems {
@@ -48,6 +49,9 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        retrieveData()
+        
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         calendar = FSCalendar(frame: CGRect(x: 0.0, y: 100.0,
                                             width: self.view.frame.size.width,
@@ -96,6 +100,25 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
 
         
         
+    }
+    
+    func retrieveData(){
+        //This is how to retrieve all the item names, keys and dates
+        //you can append all data to a dictionary, or create an array
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        ref = Database.database().reference()
+        ref?.child("users").child(userID).child("items").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? [String: Any]
+            for v in value!{
+                print(v.key)
+                let dict = v.value as! [String: Any]
+                let name = dict["name"] as! String
+                print(name)
+                let date = dict["date"] as! String
+                print(date)
+                print("")
+            }
+        })
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

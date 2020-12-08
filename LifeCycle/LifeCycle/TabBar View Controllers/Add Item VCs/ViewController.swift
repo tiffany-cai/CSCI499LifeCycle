@@ -109,34 +109,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return PlantCell
         
     }
-        /*
-        let SeedCell = tableView.dequeueReusableCell(withIdentifier: "SeedCell") as! itemCell
-        let PlantCell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! itemCell
-        
-        
-        
-        // Fetch the data for the row.
-        let seed = seeds[indexPath.row]
-        let plant = plants[indexPath.row]
-        
-        // Configure the cell’s contents with data from the fetched object.
-        SeedCell.name?.text = seed.name
-        SeedCell.date?.text = seed.date
-        
-        PlantCell.name?.text = plant.name
-        PlantCell.date?.text = plant.date
-        
-        if indexPath.row < seeds.count{
-            return SeedCell
-        }
-        
-        return PlantCell
- */
-    
     
     func tableView(_ tableView: UITableView,
                heightForRowAt indexPath: IndexPath) -> CGFloat {
-          return 85
+        if indexPath.section == 0 {
+            return 50
+        }else {
+            return 85
+        }
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

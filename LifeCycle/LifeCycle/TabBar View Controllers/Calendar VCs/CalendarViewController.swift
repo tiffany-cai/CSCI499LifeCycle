@@ -29,8 +29,16 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var CalList: UITableView!
 
     var calItemArray = [calItems]()
-    var calendar:FSCalendar!
-    var formatter = DateFormatter()
+    //var calendar:FSCalendar!
+    @IBOutlet var calendar: FSCalendar!
+    
+    //var formatter = DateFormatter()
+    //formats the dates this way, so xcode knows how to read the dates, used in the dot function when it reads the dates in the array
+    fileprivate lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        return formatter
+    }()
     
     
     fileprivate let gregorian: NSCalendar! = NSCalendar(calendarIdentifier:NSCalendar.Identifier.gregorian)
@@ -40,7 +48,7 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         retrieveData()
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem
         calendar = FSCalendar(frame: CGRect(x: 0.0, y: 100.0,
                                             width: self.view.frame.size.width,
                                             height: self.view.frame.size.width))
@@ -80,7 +88,7 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
     }
     
-    func retrieveData(){
+    func retrieveData() {
         //This is how to retrieve all the item names, keys and dates
         //you can append all data to a dictionary, or create an array
         guard let userID = Auth.auth().currentUser?.uid else { return }
@@ -98,6 +106,7 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
         })
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -107,9 +116,9 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CalCell") as! CalendarTableViewCell
     }
     
-        cell.labelcallItemName.text = calItemArray[indexPath.row].calItemName
+       /* cell.labelcallItemName.text = calItemArray[indexPath.row].calItemName
     
-        cell.labelcallItemDetail.text = calItemArray[indexPath.row].calItemInfo
+        cell.labelcallItemDetail.text = calItemArray[indexPath.row].calItemInfo*/
     
     return cell
     
@@ -133,11 +142,24 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         return 0
     }*/
+    
+    //array with one event
+    var datesWithEvent = ["12/01/2020", "12/03/2020", "12/17/2020", "12/20/2020"]
+    //array with multiple events
+    var datesWithMultipleEvents = ["12/25/2020", "12/30/2020"]
 
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-        let day: Int! = self.gregorian.component(.day, from: date)
-        return day % 6 == 0 ? day/6 : 0;
+        
+        let dateString = self.dateFormatter.string(from: date)
+        if self.datesWithEvent.contains(dateString) {
+            return 1
+        }
+        if self.datesWithMultipleEvents.contains(dateString) {
+            return 3 //make return number of events on day
+        }
+        return 0
     }
+    
     
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
         let day: Int! = self.gregorian.component(.day, from: date)

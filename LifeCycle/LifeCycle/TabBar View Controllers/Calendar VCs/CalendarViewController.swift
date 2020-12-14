@@ -78,16 +78,13 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         calendar.allowsMultipleSelection = false
         
         
-
-        //end of delete
-        
-        
         CalList.delegate = self
         CalList.dataSource = self
 
         
         
     }
+    
     
     func retrieveData() {
         //This is how to retrieve all the item names, keys and dates
@@ -96,7 +93,7 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         ref = Database.database().reference()
         ref?.child("users").child(userID).child("items").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? [String: Any]
-            for v in value!{
+            for v in value! {
                 print(v.key)
                 let dict = v.value as! [String: Any]
                 let name = dict["name"] as! String

@@ -24,8 +24,8 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         
         
-        self.navigationController?.navigationBar.barTintColor = MorningBlue
-        self.view.backgroundColor = MorningBlue
+        self.navigationController?.navigationBar.barTintColor = SteelTeal
+        self.view.backgroundColor = SteelTeal
         
         errorLabel.alpha = 0;
         

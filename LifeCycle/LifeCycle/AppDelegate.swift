@@ -20,11 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Universal Tab Bar Configs
         UITabBar.appearance().tintColor = White
         UITabBar.appearance().barTintColor = Blackish
+    
         
         //Universal Navigation Bar Configs
         UINavigationBar.appearance().barTintColor = Blackish
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:White]
-        UINavigationBar.appearance().tintColor = Blackish
+        UINavigationBar.appearance().tintColor = White
         
 
         // Universal UINavigation Controller

@@ -20,9 +20,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
         // Set BG
-        //self.view.backgroundColor = UIColor.AppColors.AshGrey
-        // Set Nav Bar Color
-        
+        self.view.backgroundColor = White
         
         // Get User ID/ Email
         let user = Auth.auth().currentUser

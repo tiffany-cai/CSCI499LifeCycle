@@ -18,14 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Universal Tab Bar Configs
-        UITabBar.appearance().tintColor = White
-        UITabBar.appearance().barTintColor = Blackish
+        UITabBar.appearance().tintColor = SteelTeal
+        UITabBar.appearance().barTintColor = White
     
         
         //Universal Navigation Bar Configs
-        UINavigationBar.appearance().barTintColor = Blackish
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:White]
-        UINavigationBar.appearance().tintColor = White
+        UINavigationBar.appearance().barTintColor = White
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:SteelTeal]
+        UINavigationBar.appearance().tintColor = Blackish
         
 
         // Universal UINavigation Controller

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 
 class LoginViewController: UIViewController {
@@ -18,6 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password : UITextField!
     
     @IBOutlet weak var errorLabel : UILabel!
+    @IBOutlet weak var fblogin: UIButton!
     
     @IBOutlet weak var showpass: UIButton!
     
@@ -31,10 +33,69 @@ class LoginViewController: UIViewController {
         self.view.backgroundColor = SteelTeal
 
         errorLabel.alpha = 0;
-        
+      //  let loginButton = FBLoginButton()
+       // loginButton.center = view.center
+       // view.addSubview(loginButton)
+ 
     }
     
+    @IBAction func fbLogin(_ sender: Any) {
+       // FBLoginButton()
+        //loginButton.center = view.center
+       // view.addSubview(loginButton)
+        fblogin.addTarget(self, action: #selector(handleFBLogin), for: .touchUpInside)
 
+    }
+    @objc func handleFBLogin() {
+        LoginManager().logIn( permissions: ["email","public_profile"])
+        
+        
+        showEmailAddress()
+   // let storyboard = UIStoryboard(name: "Main", bundle: nil)
+   // let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+   // (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+        guard let userID = Auth.auth().currentUser?.uid else { return }
+        
+
+        // USING REALTIME DB
+        ref = Database.database().reference()
+
+        ref?.child("users").child(userID).updateChildValues([
+
+            :])
+    }
+    func showEmailAddress() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+        let accessToken = AccessToken.current
+        guard let accessTokenString = accessToken?.tokenString else { return }
+        let credentials = FacebookAuthProvider.credential(withAccessToken: accessTokenString)
+        Auth.auth().signIn(with: credentials, completion: { ( user, error) in
+            if error != nil {
+                print("something went wrong with our fb user: ", error)
+            }
+            print ("success",user)
+
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            guard let userID = Auth.auth().currentUser?.uid else { return }
+            
+            //add fname, lname to db
+            // USING REALTIME DB
+            ref = Database.database().reference()
+            ref?.child("users").child(userID).updateChildValues([
+                "Snooze": 15
+            ])
+        })
+        GraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, err) in
+            if err != nil {
+                print ("failed to start", err)
+                return
+            }
+            print (result)
+            
+            
+        }
+    }
     @IBAction func LoginTapped(_ sender: Any) {
         //for debugging
         print("Login Tapped");

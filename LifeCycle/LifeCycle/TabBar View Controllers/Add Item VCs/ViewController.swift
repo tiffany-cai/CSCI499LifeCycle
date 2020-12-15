@@ -44,8 +44,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
-        NavBar.title = "Welcome"
-        //self.view.backgroundColor = White
+        //NavBar.title = "Welcome"
         
         guard let userID = Auth.auth().currentUser?.uid else { return }
         ref?.child("users").child(userID).child("items").queryOrderedByKey().observe(.childAdded, with: { (snapshot) -> Void in

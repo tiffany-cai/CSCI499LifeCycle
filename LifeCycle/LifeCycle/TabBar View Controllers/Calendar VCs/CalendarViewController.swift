@@ -49,7 +49,7 @@ class CalendarViewController: UIViewController,UITableViewDelegate,UITableViewDa
         retrieveData()
         
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
-        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 100.0,
+        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 125.0,
                                             width: self.view.frame.size.width,
                                             height: self.view.frame.size.width))
         calendar.scrollDirection = .vertical

@@ -12,12 +12,20 @@ import Firebase
 class SupportViewController: UIViewController {
 
     @IBOutlet weak var Question: UITextView!
+    //@IBOutlet weak var labelSuccess: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set BG
-        //self.view.backgroundColor = UIColor.AppColors.AshGrey
+        self.view.backgroundColor = White
         // Do any additional setup after loading the view.
+        
+        // hide success lbl
+        //labelSuccess.alpha = 0;
+        
+        //add border around textfield
+        Question!.layer.borderWidth = 1
+        Question!.layer.borderColor = Blackish.cgColor
     }
     
     
@@ -37,7 +45,14 @@ class SupportViewController: UIViewController {
                 print("Document successfully written!")
             }
         }
+       // showSuccessLabel("Support Form sent successfully!")
     }
+    
+    /*
+    func showSuccessLabel(_ message:String){
+     labelSuccess.text = message
+     labelSuccess.alpha = 1
+    }*/
     
 
     @IBAction func BackBtn(_ sender: Any) {

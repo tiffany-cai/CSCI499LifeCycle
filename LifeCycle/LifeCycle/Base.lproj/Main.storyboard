@@ -25,6 +25,9 @@
                                         <state key="normal" title="Sign in with Facebook" backgroundImage="FB">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="fbLogin:" destination="mjD-e8-KIc" eventType="touchUpInside" id="OqB-1a-I7x"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z15-qa-SVu">
                                         <rect key="frame" x="0.0" y="76" width="294" height="69"/>
@@ -150,6 +153,7 @@
                     <navigationItem key="navigationItem" id="As1-ug-Qax"/>
                     <connections>
                         <outlet property="errorLabel" destination="ynU-DD-74k" id="4C3-cT-e8D"/>
+                        <outlet property="fblogin" destination="2RF-mf-6sE" id="DZv-vV-p39"/>
                         <outlet property="password" destination="ROL-gf-ZkE" id="E5c-iQ-OVE"/>
                         <outlet property="showpass" destination="MNL-zP-m3S" id="4bE-lI-XZJ"/>
                         <outlet property="username" destination="HLU-sG-MA9" id="f0m-KL-08P"/>

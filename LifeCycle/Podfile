@@ -6,6 +6,7 @@ target 'LifeCycle' do
   use_frameworks!
 
   # Pods for LifeCycle
+	pod 'FSCalendar'
 
 # Add the Firebase pod for Google Analytics
 pod 'Firebase/Analytics'
@@ -14,5 +15,8 @@ pod 'Firebase/Analytics'
 # For example, to use Firebase Authentication and Cloud Firestore
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod ‘FirebaseFirestoreSwift’
+pod 'Firebase/Database'
+pod ‘FBSDKLoginKit’
 
 end
